@@ -19,8 +19,8 @@ class Video with _$Video {
         required dynamic username,
         required User? user,
         required dynamic postType,
-        required String? title,
-        required List<SingleVideo>? videos,
+        required dynamic title,
+        required List<SingleVideo> videos,
         required dynamic videoProcessing,
         required List<Tag>? tags,
         required bool? edited,
@@ -77,16 +77,12 @@ class PostEngagement with _$PostEngagement {
   }) = _PostEngagement;
 }
 
-enum ReactionName {
-    HEART,
-    THUMBS_DOWN,
-    THUMBS_UP
-}
+
 
 @freezed
 class Reaction with _$Reaction {
     const factory Reaction({
-        required ReactionName name,
+        required String name,
         required int count,
     }) = _Reaction;
 }

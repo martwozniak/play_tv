@@ -96,7 +96,7 @@ class NetworkMapper {
           totalCommentCount: singleVideoEntity.postEngagement.totalCommentCount,
           commentCount: singleVideoEntity.postEngagement.commentCount,
           views: singleVideoEntity.postEngagement.views,
-          reactions: singleVideoEntity.postEngagement.reactions.map((reaction) => Reaction(name: ReactionName.values.firstWhere((e) => e.name == reaction.name), count: reaction.count)).toList(),
+          reactions: singleVideoEntity.postEngagement.reactions.map((reaction) => Reaction(name: reaction.name ?? '', count: reaction.count)).toList(),
         ),
         userEngagement: UserEngagement(
           hasReposted: singleVideoEntity.userEngagement.hasReposted,

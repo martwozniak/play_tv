@@ -30,8 +30,8 @@ mixin _$Video {
   dynamic get username => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
   dynamic get postType => throw _privateConstructorUsedError;
-  String? get title => throw _privateConstructorUsedError;
-  List<SingleVideo>? get videos => throw _privateConstructorUsedError;
+  dynamic get title => throw _privateConstructorUsedError;
+  List<SingleVideo> get videos => throw _privateConstructorUsedError;
   dynamic get videoProcessing => throw _privateConstructorUsedError;
   List<Tag>? get tags => throw _privateConstructorUsedError;
   bool? get edited => throw _privateConstructorUsedError;
@@ -76,8 +76,8 @@ abstract class $VideoCopyWith<$Res> {
       dynamic username,
       User? user,
       dynamic postType,
-      String? title,
-      List<SingleVideo>? videos,
+      dynamic title,
+      List<SingleVideo> videos,
       dynamic videoProcessing,
       List<Tag>? tags,
       bool? edited,
@@ -131,7 +131,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
     Object? user = freezed,
     Object? postType = freezed,
     Object? title = freezed,
-    Object? videos = freezed,
+    Object? videos = null,
     Object? videoProcessing = freezed,
     Object? tags = freezed,
     Object? edited = freezed,
@@ -210,11 +210,11 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      videos: freezed == videos
+              as dynamic,
+      videos: null == videos
           ? _value.videos
           : videos // ignore: cast_nullable_to_non_nullable
-              as List<SingleVideo>?,
+              as List<SingleVideo>,
       videoProcessing: freezed == videoProcessing
           ? _value.videoProcessing
           : videoProcessing // ignore: cast_nullable_to_non_nullable
@@ -351,8 +351,8 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
       dynamic username,
       User? user,
       dynamic postType,
-      String? title,
-      List<SingleVideo>? videos,
+      dynamic title,
+      List<SingleVideo> videos,
       dynamic videoProcessing,
       List<Tag>? tags,
       bool? edited,
@@ -407,7 +407,7 @@ class __$$VideoImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? postType = freezed,
     Object? title = freezed,
-    Object? videos = freezed,
+    Object? videos = null,
     Object? videoProcessing = freezed,
     Object? tags = freezed,
     Object? edited = freezed,
@@ -486,11 +486,11 @@ class __$$VideoImplCopyWithImpl<$Res>
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String?,
-      videos: freezed == videos
+              as dynamic,
+      videos: null == videos
           ? _value._videos
           : videos // ignore: cast_nullable_to_non_nullable
-              as List<SingleVideo>?,
+              as List<SingleVideo>,
       videoProcessing: freezed == videoProcessing
           ? _value.videoProcessing
           : videoProcessing // ignore: cast_nullable_to_non_nullable
@@ -582,7 +582,7 @@ class _$VideoImpl implements _Video {
       required this.user,
       required this.postType,
       required this.title,
-      required final List<SingleVideo>? videos,
+      required final List<SingleVideo> videos,
       required this.videoProcessing,
       required final List<Tag>? tags,
       required this.edited,
@@ -632,15 +632,13 @@ class _$VideoImpl implements _Video {
   @override
   final dynamic postType;
   @override
-  final String? title;
-  final List<SingleVideo>? _videos;
+  final dynamic title;
+  final List<SingleVideo> _videos;
   @override
-  List<SingleVideo>? get videos {
-    final value = _videos;
-    if (value == null) return null;
+  List<SingleVideo> get videos {
     if (_videos is EqualUnmodifiableListView) return _videos;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_videos);
   }
 
   @override
@@ -718,7 +716,7 @@ class _$VideoImpl implements _Video {
             const DeepCollectionEquality().equals(other.username, username) &&
             (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other.postType, postType) &&
-            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other._videos, _videos) &&
             const DeepCollectionEquality()
                 .equals(other.videoProcessing, videoProcessing) &&
@@ -766,7 +764,7 @@ class _$VideoImpl implements _Video {
         const DeepCollectionEquality().hash(username),
         user,
         const DeepCollectionEquality().hash(postType),
-        title,
+        const DeepCollectionEquality().hash(title),
         const DeepCollectionEquality().hash(_videos),
         const DeepCollectionEquality().hash(videoProcessing),
         const DeepCollectionEquality().hash(_tags),
@@ -812,8 +810,8 @@ abstract class _Video implements Video {
       required final dynamic username,
       required final User? user,
       required final dynamic postType,
-      required final String? title,
-      required final List<SingleVideo>? videos,
+      required final dynamic title,
+      required final List<SingleVideo> videos,
       required final dynamic videoProcessing,
       required final List<Tag>? tags,
       required final bool? edited,
@@ -861,9 +859,9 @@ abstract class _Video implements Video {
   @override
   dynamic get postType;
   @override
-  String? get title;
+  dynamic get title;
   @override
-  List<SingleVideo>? get videos;
+  List<SingleVideo> get videos;
   @override
   dynamic get videoProcessing;
   @override
@@ -1603,7 +1601,7 @@ abstract class _PostEngagement implements PostEngagement {
 
 /// @nodoc
 mixin _$Reaction {
-  ReactionName get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
 
   /// Create a copy of Reaction
@@ -1618,7 +1616,7 @@ abstract class $ReactionCopyWith<$Res> {
   factory $ReactionCopyWith(Reaction value, $Res Function(Reaction) then) =
       _$ReactionCopyWithImpl<$Res, Reaction>;
   @useResult
-  $Res call({ReactionName name, int count});
+  $Res call({String name, int count});
 }
 
 /// @nodoc
@@ -1643,7 +1641,7 @@ class _$ReactionCopyWithImpl<$Res, $Val extends Reaction>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as ReactionName,
+              as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -1660,7 +1658,7 @@ abstract class _$$ReactionImplCopyWith<$Res>
       __$$ReactionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ReactionName name, int count});
+  $Res call({String name, int count});
 }
 
 /// @nodoc
@@ -1683,7 +1681,7 @@ class __$$ReactionImplCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as ReactionName,
+              as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -1698,7 +1696,7 @@ class _$ReactionImpl implements _Reaction {
   const _$ReactionImpl({required this.name, required this.count});
 
   @override
-  final ReactionName name;
+  final String name;
   @override
   final int count;
 
@@ -1730,11 +1728,10 @@ class _$ReactionImpl implements _Reaction {
 
 abstract class _Reaction implements Reaction {
   const factory _Reaction(
-      {required final ReactionName name,
-      required final int count}) = _$ReactionImpl;
+      {required final String name, required final int count}) = _$ReactionImpl;
 
   @override
-  ReactionName get name;
+  String get name;
   @override
   int get count;
 

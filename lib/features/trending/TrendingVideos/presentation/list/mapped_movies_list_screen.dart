@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:play_tv/data/repository/trending_videos_repository.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
 import 'package:provider/provider.dart';
-import 'package:play_tv/domain/model/trending_videos.dart';
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
 
-class MoviesList extends StatefulWidget {
-  const MoviesList({super.key});
+class MappedMoviesList extends StatefulWidget {
+  const MappedMoviesList({super.key});
 
   @override
-  State<MoviesList> createState() => _MoviesListState();
+  State<MappedMoviesList> createState() => _MappedMoviesListState();
 }
 
-class _MoviesListState extends State<MoviesList> {
+class _MappedMoviesListState extends State<MappedMoviesList> {
   late Future<List<TrendingVideos>> _trendingVideosFuture;
 
   @override
-  void initState() {
+  void initState() async {
     super.initState();
     final repository = Provider.of<TrendingVideosRepository>(context, listen: false);
-    _trendingVideosFuture = repository.getTrendingVideos();
+
+    final trendingVideos = await repository.getTrendingVideos();
+    _trendingVideosFuture = repository.mapToTrendingVideos(
+      trendingVideos
+    ) as Future<List<TrendingVideos>>;
   }
 
   @override

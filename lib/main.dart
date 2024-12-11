@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:play_tv/presentation/list/movies_list_screen.dart';
 import 'package:play_tv/data/network/client/api_client.dart';
-import 'package:play_tv/data/network/network_mapper.dart';
-import 'package:play_tv/data/repository/trending_videos_repository.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/network/network_mapper.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
 import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
+
+import 'features/trending/TrendingVideos/presentation/list/movies_list_screen.dart';
 
 void main() {
   final apiClient = ApiClient(baseUrl: 'https://playtv-api.parler.com/v3/');
@@ -15,8 +16,13 @@ void main() {
   );
 
   runApp(
-    Provider<TrendingVideosRepository>(
-      create: (_) => trendingVideosRepository,
+    MultiProvider(
+      providers: [
+        Provider<ApiClient>(create: (_) => apiClient),
+        Provider<NetworkMapper>(create: (_) => networkMapper),
+        Provider<TrendingVideosRepository>(create: (_) => trendingVideosRepository),
+        // Add more providers as needed
+      ],
       child: const MyApp(),
     ),
   );

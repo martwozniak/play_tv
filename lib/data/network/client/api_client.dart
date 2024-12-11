@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:play_tv/data/network/entity/trending_videos_entity.dart';
-import 'package:play_tv/domain/model/trending_videos.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/video_entity.dart';
 
 class ApiClient {
   late final Dio _dio;
@@ -21,9 +21,30 @@ class ApiClient {
       throw Exception('Failed to get trending videos');
     } else if (response.statusCode! >= 200 && response.data is Map<String, dynamic>) {
       final trendingVideosEntity = TrendingVideosEntity.fromJson(response.data as Map<String, dynamic>);
+      final result = await mapToTrendingVideos(trendingVideosEntity);
+      print(result);
       return [trendingVideosEntity];
     } else {
       throw Exception('Failed to get trending videos');
+    }
+  }
+
+  Future<List<VideoEntity>> mapToTrendingVideos(TrendingVideosEntity trendingVideosEntity) async {
+    // final videoIds = trendingVideosEntity.map((video) => video.ulids).toList();
+    // trendingVideosEntity.ulids
+    final response = await _dio.post(
+      'posts/map', 
+      data: {
+        "data": trendingVideosEntity.ulids,
+        "responseType": "videos"
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final List<dynamic> videosJson = response.data as List<dynamic>;
+      return videosJson.map((json) => VideoEntity.fromJson(json as Map<String, dynamic>)).toList();
+    } else {
+      throw Exception('Failed to map trending videos');
     }
   }
 }

@@ -28,6 +28,13 @@ class _MoviesListState extends State<MoviesList> {
     _mapToTrendingVideosFuture = repository.mapToTrendingVideosFuture(_trendingVideosFuture);
   }
 
+  // Helper method to format duration
+  String _formatDuration(int duration) {
+    final minutes = duration ~/ 60;
+    final seconds = duration % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,15 +61,30 @@ class _MoviesListState extends State<MoviesList> {
               itemBuilder: (context, index) {
                 final video = trendingVideos[index];
                 return ListTile(
-                  title: Text('Title: ${video.title}'),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Per Page: ${video.videos.length}'),
                       SizedBox(height: 8),
-                      Image.network(video.videos[0].thumbnail.url as String),
-                      Text(' ${video.title}'),
-                      // Image.network(video.user.avatar),
+                      Stack(
+                        children: [
+                          Image.network(video.videos[0].thumbnail.url as String),
+                          Positioned(
+                            right: 8,
+                            bottom: 8,
+                            child: Container(
+                              color: Colors.black54,
+                              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                              child: Text(
+                                'Duration: ${_formatDuration(video.videos[0].duration)}',
+                                style: TextStyle(color: Colors.white, fontSize: 12),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(' ${video.title}', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Author: ${video.user.avatar}'),
+                      Text('Views: ${video.postEngagement.views}'),
                     ],
                   ),
                   onTap: () {

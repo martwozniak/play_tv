@@ -17,7 +17,7 @@ class Video with _$Video {
         required String body,
         required dynamic detectedLanguage,
         required dynamic username,
-        required User? user,
+        required User user,
         required dynamic postType,
         required String title,
         required List<SingleVideo> videos,
@@ -31,13 +31,13 @@ class Video with _$Video {
         required dynamic groupName,
         required dynamic groupId,
         required dynamic support,
-        required DateTime? createdAt,
-        required DateTime? updatedAt,
-        required bool? isDeleted,
+        required DateTime createdAt,
+        required DateTime updatedAt,
+        required bool isDeleted,
         required dynamic isHidden,
-        required bool? isProcessing,
-        required UserEngagement? userEngagement,
-        required PostEngagement? postEngagement,
+        required bool isProcessing,
+        required UserEngagement userEngagement,
+        required PostEngagement postEngagement,
   }) = _Video;
 }
 

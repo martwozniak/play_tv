@@ -28,7 +28,7 @@ mixin _$Video {
   String get body => throw _privateConstructorUsedError;
   dynamic get detectedLanguage => throw _privateConstructorUsedError;
   dynamic get username => throw _privateConstructorUsedError;
-  User? get user => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
   dynamic get postType => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<SingleVideo> get videos => throw _privateConstructorUsedError;
@@ -42,13 +42,13 @@ mixin _$Video {
   dynamic get groupName => throw _privateConstructorUsedError;
   dynamic get groupId => throw _privateConstructorUsedError;
   dynamic get support => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  bool? get isDeleted => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+  bool get isDeleted => throw _privateConstructorUsedError;
   dynamic get isHidden => throw _privateConstructorUsedError;
-  bool? get isProcessing => throw _privateConstructorUsedError;
-  UserEngagement? get userEngagement => throw _privateConstructorUsedError;
-  PostEngagement? get postEngagement => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
+  UserEngagement get userEngagement => throw _privateConstructorUsedError;
+  PostEngagement get postEngagement => throw _privateConstructorUsedError;
 
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.
@@ -74,7 +74,7 @@ abstract class $VideoCopyWith<$Res> {
       String body,
       dynamic detectedLanguage,
       dynamic username,
-      User? user,
+      User user,
       dynamic postType,
       String title,
       List<SingleVideo> videos,
@@ -88,17 +88,17 @@ abstract class $VideoCopyWith<$Res> {
       dynamic groupName,
       dynamic groupId,
       dynamic support,
-      DateTime? createdAt,
-      DateTime? updatedAt,
-      bool? isDeleted,
+      DateTime createdAt,
+      DateTime updatedAt,
+      bool isDeleted,
       dynamic isHidden,
-      bool? isProcessing,
-      UserEngagement? userEngagement,
-      PostEngagement? postEngagement});
+      bool isProcessing,
+      UserEngagement userEngagement,
+      PostEngagement postEngagement});
 
-  $UserCopyWith<$Res>? get user;
-  $UserEngagementCopyWith<$Res>? get userEngagement;
-  $PostEngagementCopyWith<$Res>? get postEngagement;
+  $UserCopyWith<$Res> get user;
+  $UserEngagementCopyWith<$Res> get userEngagement;
+  $PostEngagementCopyWith<$Res> get postEngagement;
 }
 
 /// @nodoc
@@ -128,7 +128,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
     Object? body = null,
     Object? detectedLanguage = freezed,
     Object? username = freezed,
-    Object? user = freezed,
+    Object? user = null,
     Object? postType = freezed,
     Object? title = null,
     Object? videos = null,
@@ -142,13 +142,13 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
     Object? groupName = freezed,
     Object? groupId = freezed,
     Object? support = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? isDeleted = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? isDeleted = null,
     Object? isHidden = freezed,
-    Object? isProcessing = freezed,
-    Object? userEngagement = freezed,
-    Object? postEngagement = freezed,
+    Object? isProcessing = null,
+    Object? userEngagement = null,
+    Object? postEngagement = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -199,10 +199,10 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as User,
       postType: freezed == postType
           ? _value.postType
           : postType // ignore: cast_nullable_to_non_nullable
@@ -255,34 +255,34 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
           ? _value.support
           : support // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedAt: freezed == updatedAt
+              as DateTime,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      isDeleted: freezed == isDeleted
+              as DateTime,
+      isDeleted: null == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       isHidden: freezed == isHidden
           ? _value.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      isProcessing: freezed == isProcessing
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userEngagement: freezed == userEngagement
+              as bool,
+      userEngagement: null == userEngagement
           ? _value.userEngagement
           : userEngagement // ignore: cast_nullable_to_non_nullable
-              as UserEngagement?,
-      postEngagement: freezed == postEngagement
+              as UserEngagement,
+      postEngagement: null == postEngagement
           ? _value.postEngagement
           : postEngagement // ignore: cast_nullable_to_non_nullable
-              as PostEngagement?,
+              as PostEngagement,
     ) as $Val);
   }
 
@@ -290,12 +290,8 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.user!, (value) {
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
@@ -304,12 +300,8 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UserEngagementCopyWith<$Res>? get userEngagement {
-    if (_value.userEngagement == null) {
-      return null;
-    }
-
-    return $UserEngagementCopyWith<$Res>(_value.userEngagement!, (value) {
+  $UserEngagementCopyWith<$Res> get userEngagement {
+    return $UserEngagementCopyWith<$Res>(_value.userEngagement, (value) {
       return _then(_value.copyWith(userEngagement: value) as $Val);
     });
   }
@@ -318,12 +310,8 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $PostEngagementCopyWith<$Res>? get postEngagement {
-    if (_value.postEngagement == null) {
-      return null;
-    }
-
-    return $PostEngagementCopyWith<$Res>(_value.postEngagement!, (value) {
+  $PostEngagementCopyWith<$Res> get postEngagement {
+    return $PostEngagementCopyWith<$Res>(_value.postEngagement, (value) {
       return _then(_value.copyWith(postEngagement: value) as $Val);
     });
   }
@@ -349,7 +337,7 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
       String body,
       dynamic detectedLanguage,
       dynamic username,
-      User? user,
+      User user,
       dynamic postType,
       String title,
       List<SingleVideo> videos,
@@ -363,20 +351,20 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
       dynamic groupName,
       dynamic groupId,
       dynamic support,
-      DateTime? createdAt,
-      DateTime? updatedAt,
-      bool? isDeleted,
+      DateTime createdAt,
+      DateTime updatedAt,
+      bool isDeleted,
       dynamic isHidden,
-      bool? isProcessing,
-      UserEngagement? userEngagement,
-      PostEngagement? postEngagement});
+      bool isProcessing,
+      UserEngagement userEngagement,
+      PostEngagement postEngagement});
 
   @override
-  $UserCopyWith<$Res>? get user;
+  $UserCopyWith<$Res> get user;
   @override
-  $UserEngagementCopyWith<$Res>? get userEngagement;
+  $UserEngagementCopyWith<$Res> get userEngagement;
   @override
-  $PostEngagementCopyWith<$Res>? get postEngagement;
+  $PostEngagementCopyWith<$Res> get postEngagement;
 }
 
 /// @nodoc
@@ -404,7 +392,7 @@ class __$$VideoImplCopyWithImpl<$Res>
     Object? body = null,
     Object? detectedLanguage = freezed,
     Object? username = freezed,
-    Object? user = freezed,
+    Object? user = null,
     Object? postType = freezed,
     Object? title = null,
     Object? videos = null,
@@ -418,13 +406,13 @@ class __$$VideoImplCopyWithImpl<$Res>
     Object? groupName = freezed,
     Object? groupId = freezed,
     Object? support = freezed,
-    Object? createdAt = freezed,
-    Object? updatedAt = freezed,
-    Object? isDeleted = freezed,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+    Object? isDeleted = null,
     Object? isHidden = freezed,
-    Object? isProcessing = freezed,
-    Object? userEngagement = freezed,
-    Object? postEngagement = freezed,
+    Object? isProcessing = null,
+    Object? userEngagement = null,
+    Object? postEngagement = null,
   }) {
     return _then(_$VideoImpl(
       id: freezed == id
@@ -475,10 +463,10 @@ class __$$VideoImplCopyWithImpl<$Res>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as User,
       postType: freezed == postType
           ? _value.postType
           : postType // ignore: cast_nullable_to_non_nullable
@@ -531,34 +519,34 @@ class __$$VideoImplCopyWithImpl<$Res>
           ? _value.support
           : support // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      createdAt: freezed == createdAt
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedAt: freezed == updatedAt
+              as DateTime,
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      isDeleted: freezed == isDeleted
+              as DateTime,
+      isDeleted: null == isDeleted
           ? _value.isDeleted
           : isDeleted // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       isHidden: freezed == isHidden
           ? _value.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      isProcessing: freezed == isProcessing
+      isProcessing: null == isProcessing
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      userEngagement: freezed == userEngagement
+              as bool,
+      userEngagement: null == userEngagement
           ? _value.userEngagement
           : userEngagement // ignore: cast_nullable_to_non_nullable
-              as UserEngagement?,
-      postEngagement: freezed == postEngagement
+              as UserEngagement,
+      postEngagement: null == postEngagement
           ? _value.postEngagement
           : postEngagement // ignore: cast_nullable_to_non_nullable
-              as PostEngagement?,
+              as PostEngagement,
     ));
   }
 }
@@ -628,7 +616,7 @@ class _$VideoImpl implements _Video {
   @override
   final dynamic username;
   @override
-  final User? user;
+  final User user;
   @override
   final dynamic postType;
   @override
@@ -670,19 +658,19 @@ class _$VideoImpl implements _Video {
   @override
   final dynamic support;
   @override
-  final DateTime? createdAt;
+  final DateTime createdAt;
   @override
-  final DateTime? updatedAt;
+  final DateTime updatedAt;
   @override
-  final bool? isDeleted;
+  final bool isDeleted;
   @override
   final dynamic isHidden;
   @override
-  final bool? isProcessing;
+  final bool isProcessing;
   @override
-  final UserEngagement? userEngagement;
+  final UserEngagement userEngagement;
   @override
-  final PostEngagement? postEngagement;
+  final PostEngagement postEngagement;
 
   @override
   String toString() {
@@ -808,7 +796,7 @@ abstract class _Video implements Video {
       required final String body,
       required final dynamic detectedLanguage,
       required final dynamic username,
-      required final User? user,
+      required final User user,
       required final dynamic postType,
       required final String title,
       required final List<SingleVideo> videos,
@@ -822,13 +810,13 @@ abstract class _Video implements Video {
       required final dynamic groupName,
       required final dynamic groupId,
       required final dynamic support,
-      required final DateTime? createdAt,
-      required final DateTime? updatedAt,
-      required final bool? isDeleted,
+      required final DateTime createdAt,
+      required final DateTime updatedAt,
+      required final bool isDeleted,
       required final dynamic isHidden,
-      required final bool? isProcessing,
-      required final UserEngagement? userEngagement,
-      required final PostEngagement? postEngagement}) = _$VideoImpl;
+      required final bool isProcessing,
+      required final UserEngagement userEngagement,
+      required final PostEngagement postEngagement}) = _$VideoImpl;
 
   @override
   dynamic get id;
@@ -855,7 +843,7 @@ abstract class _Video implements Video {
   @override
   dynamic get username;
   @override
-  User? get user;
+  User get user;
   @override
   dynamic get postType;
   @override
@@ -883,19 +871,19 @@ abstract class _Video implements Video {
   @override
   dynamic get support;
   @override
-  DateTime? get createdAt;
+  DateTime get createdAt;
   @override
-  DateTime? get updatedAt;
+  DateTime get updatedAt;
   @override
-  bool? get isDeleted;
+  bool get isDeleted;
   @override
   dynamic get isHidden;
   @override
-  bool? get isProcessing;
+  bool get isProcessing;
   @override
-  UserEngagement? get userEngagement;
+  UserEngagement get userEngagement;
   @override
-  PostEngagement? get postEngagement;
+  PostEngagement get postEngagement;
 
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.

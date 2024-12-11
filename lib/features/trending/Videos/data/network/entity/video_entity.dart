@@ -30,7 +30,7 @@ class SingleVideoEntity {
     String? detectedLanguage;
     String? username;
     User? user;
-    PostType? postType;
+    dynamic postType;
     String? title;
     List<SingleVideo>? videos;
     dynamic videoProcessing;
@@ -87,6 +87,9 @@ class SingleVideoEntity {
         required this.postEngagement,
     });
 
+    factory SingleVideoEntity.fromJson(Map<String, dynamic> json) => _$SingleVideoEntityFromJson(json);
+    Map<String, dynamic> toJson() => _$SingleVideoEntityToJson(this);
+
 }
 
 @JsonSerializable()
@@ -103,11 +106,13 @@ class PostEngagement {
         required this.reactions,
     });
 
+    factory PostEngagement.fromJson(Map<String, dynamic> json) => _$PostEngagementFromJson(json);
+    Map<String, dynamic> toJson() => _$PostEngagementToJson(this);
 }
 
 @JsonSerializable()
 class Reaction {
-    Name name;
+    dynamic name;
     int count;
 
     Reaction({
@@ -115,16 +120,9 @@ class Reaction {
         required this.count,
     });
 
-}
+    factory Reaction.fromJson(Map<String, dynamic> json) => _$ReactionFromJson(json);
+    Map<String, dynamic> toJson() => _$ReactionToJson(this);
 
-enum Name {
-    HEART,
-    THUMBS_DOWN,
-    THUMBS_UP
-}
-
-enum PostType {
-    VIDEO
 }
 
 @JsonSerializable()
@@ -134,6 +132,9 @@ class Tag {
     Tag({
         required this.name,
     });
+
+    factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
+    Map<String, dynamic> toJson() => _$TagToJson(this);
 
 }
 @JsonSerializable()
@@ -150,6 +151,9 @@ class User {
         required this.updatedAtEpoch,
     });
 
+    factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+    Map<String, dynamic> toJson() => _$UserToJson(this);
+
 }
 
 @JsonSerializable()
@@ -163,6 +167,9 @@ class UserEngagement {
         required this.hasRepostedWithComment,
         required this.hasCommented,
     });
+
+    factory UserEngagement.fromJson(Map<String, dynamic> json) => _$UserEngagementFromJson(json);
+    Map<String, dynamic> toJson() => _$UserEngagementToJson(this);
 
 }
 
@@ -186,13 +193,16 @@ class VideoProcessingClass {
         required this.updatedAt,
     });
 
+    factory VideoProcessingClass.fromJson(Map<String, dynamic> json) => _$VideoProcessingClassFromJson(json);
+    Map<String, dynamic> toJson() => _$VideoProcessingClassToJson(this);
+
 }
 @JsonSerializable()
 class VideoClass {
     String url;
     int? widthPx;
     int? heightPx;
-    ThumbnailMimeType? mimeType;
+    dynamic mimeType;
     dynamic duration;
 
     VideoClass({
@@ -203,10 +213,9 @@ class VideoClass {
         this.duration,
     });
 
-}
+    factory VideoClass.fromJson(Map<String, dynamic> json) => _$VideoClassFromJson(json);
+    Map<String, dynamic> toJson() => _$VideoClassToJson(this);
 
-enum ThumbnailMimeType {
-    IMAGE_JPEG
 }
 
 @JsonSerializable()
@@ -229,6 +238,9 @@ class SingleVideo {
         required this.thumbnail,
     });
 
+    factory SingleVideo.fromJson(Map<String, dynamic> json) => _$SingleVideoFromJson(json);
+    Map<String, dynamic> toJson() => _$SingleVideoToJson(this);
+
 }
 
 enum PurpleMimeType {
@@ -242,7 +254,7 @@ class VideoThumbnail {
     String dashName;
     int widthPx;
     int heightPx;
-    ThumbnailMimeType mimeType;
+    dynamic mimeType;
 
     VideoThumbnail({
         required this.url,
@@ -252,5 +264,8 @@ class VideoThumbnail {
         required this.heightPx,
         required this.mimeType,
     });
+
+    factory VideoThumbnail.fromJson(Map<String, dynamic> json) => _$VideoThumbnailFromJson(json);
+    Map<String, dynamic> toJson() => _$VideoThumbnailToJson(this);
 
 }

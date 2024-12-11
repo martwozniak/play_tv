@@ -45,6 +45,10 @@ class NetworkMapper {
 
   Video toVideo(entity.VideoEntity videoEntity) {
     try {
+      if (videoEntity.data.isEmpty) {
+        throw MapperException<entity.VideoEntity, Video>('VideoEntity data is empty');
+      }
+      
       final singleVideoEntity = videoEntity.data.first;
       return Video(
         id: singleVideoEntity.id,
@@ -65,8 +69,8 @@ class NetworkMapper {
           updatedAt: singleVideoEntity.user.updatedAt,
           updatedAtEpoch: singleVideoEntity.user.updatedAtEpoch,
         ),
-        postType: singleVideoEntity.postType.name,
-        title: singleVideoEntity.title,
+        postType: singleVideoEntity.postType ?? '',
+        title: singleVideoEntity.title ?? '',
         videos: singleVideoEntity.videos.map((video) => SingleVideo(
           url: video.url,
           widthPx: video.widthPx,
@@ -78,11 +82,11 @@ class NetworkMapper {
             url: video.thumbnail.url,
             widthPx: video.thumbnail.widthPx,
             heightPx: video.thumbnail.heightPx,
-            mimeType: ThumbnailMimeType.values.firstWhere((e) => e.name == video.thumbnail.mimeType.name),
+            mimeType: video.thumbnail.mimeType,
           ),
         )).toList(),
         videoProcessing: singleVideoEntity.videoProcessing,
-        tags: singleVideoEntity.tags.map((tag) => Tag(name: tag.name)).toList(),
+        tags: singleVideoEntity.tags.map((tag) => Tag(name: tag.name ?? '')).toList(),
         edited: singleVideoEntity.edited,
         userReaction: singleVideoEntity.userReaction,
         isRepost: singleVideoEntity.isRepost,
@@ -109,18 +113,21 @@ class NetworkMapper {
         isProcessing: singleVideoEntity.isProcessing,
       );
     } catch (e) {
-      throw MapperException<entity.VideoEntity, Video>(
-          'Failed to map VideoEntity to Video: $e');
+      throw MapperException<entity.VideoEntity, Video>('Failed to map VideoEntity to Video: $e');
     }
   }
 
   List<Video> toVideos(List<entity.VideoEntity> videoEntities) {
     final videoList = <Video>[];
     for (final entity in videoEntities) {
-      try {
-        videoList.add(toVideo(entity));
-      } catch (e) {
-        logger.w('Failed to map VideoEntity to Video: $e');
+      if (entity.data.isNotEmpty) {
+        try {
+          videoList.add(toVideo(entity));
+        } catch (e) {
+          logger.w('Failed to map VideoEntity to Video: $e');
+        }
+      } else {
+        logger.w('Skipping mapping of empty VideoEntity');
       }
     }
     return videoList;

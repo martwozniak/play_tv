@@ -34,7 +34,7 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-      postType: $enumDecodeNullable(_$PostTypeEnumMap, json['postType']),
+      postType: json['postType'],
       title: json['title'] as String?,
       videos: (json['videos'] as List<dynamic>?)
           ?.map((e) => SingleVideo.fromJson(e as Map<String, dynamic>))
@@ -81,7 +81,7 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'detectedLanguage': instance.detectedLanguage,
       'username': instance.username,
       'user': instance.user,
-      'postType': _$PostTypeEnumMap[instance.postType],
+      'postType': instance.postType,
       'title': instance.title,
       'videos': instance.videos,
       'videoProcessing': instance.videoProcessing,
@@ -103,10 +103,6 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'postEngagement': instance.postEngagement,
     };
 
-const _$PostTypeEnumMap = {
-  PostType.VIDEO: 'VIDEO',
-};
-
 PostEngagement _$PostEngagementFromJson(Map<String, dynamic> json) =>
     PostEngagement(
       totalCommentCount: (json['totalCommentCount'] as num).toInt(),
@@ -126,20 +122,14 @@ Map<String, dynamic> _$PostEngagementToJson(PostEngagement instance) =>
     };
 
 Reaction _$ReactionFromJson(Map<String, dynamic> json) => Reaction(
-      name: $enumDecode(_$NameEnumMap, json['name']),
+      name: json['name'],
       count: (json['count'] as num).toInt(),
     );
 
 Map<String, dynamic> _$ReactionToJson(Reaction instance) => <String, dynamic>{
-      'name': _$NameEnumMap[instance.name]!,
+      'name': instance.name,
       'count': instance.count,
     };
-
-const _$NameEnumMap = {
-  Name.HEART: 'HEART',
-  Name.THUMBS_DOWN: 'THUMBS_DOWN',
-  Name.THUMBS_UP: 'THUMBS_UP',
-};
 
 Tag _$TagFromJson(Map<String, dynamic> json) => Tag(
       name: json['name'] as String,
@@ -205,8 +195,7 @@ VideoClass _$VideoClassFromJson(Map<String, dynamic> json) => VideoClass(
       url: json['url'] as String,
       widthPx: (json['widthPx'] as num?)?.toInt(),
       heightPx: (json['heightPx'] as num?)?.toInt(),
-      mimeType:
-          $enumDecodeNullable(_$ThumbnailMimeTypeEnumMap, json['mimeType']),
+      mimeType: json['mimeType'],
       duration: json['duration'],
     );
 
@@ -215,13 +204,9 @@ Map<String, dynamic> _$VideoClassToJson(VideoClass instance) =>
       'url': instance.url,
       'widthPx': instance.widthPx,
       'heightPx': instance.heightPx,
-      'mimeType': _$ThumbnailMimeTypeEnumMap[instance.mimeType],
+      'mimeType': instance.mimeType,
       'duration': instance.duration,
     };
-
-const _$ThumbnailMimeTypeEnumMap = {
-  ThumbnailMimeType.IMAGE_JPEG: 'IMAGE_JPEG',
-};
 
 SingleVideo _$SingleVideoFromJson(Map<String, dynamic> json) => SingleVideo(
       url: json['url'] as String,
@@ -256,7 +241,7 @@ VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) =>
       dashName: json['dashName'] as String,
       widthPx: (json['widthPx'] as num).toInt(),
       heightPx: (json['heightPx'] as num).toInt(),
-      mimeType: $enumDecode(_$ThumbnailMimeTypeEnumMap, json['mimeType']),
+      mimeType: json['mimeType'],
     );
 
 Map<String, dynamic> _$VideoThumbnailToJson(VideoThumbnail instance) =>
@@ -266,5 +251,5 @@ Map<String, dynamic> _$VideoThumbnailToJson(VideoThumbnail instance) =>
       'dashName': instance.dashName,
       'widthPx': instance.widthPx,
       'heightPx': instance.heightPx,
-      'mimeType': _$ThumbnailMimeTypeEnumMap[instance.mimeType]!,
+      'mimeType': instance.mimeType,
     };

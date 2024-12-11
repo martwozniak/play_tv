@@ -17,7 +17,7 @@ class VideoEntity {
 
 @JsonSerializable()
 class SingleVideoEntity {
-    String id;
+    dynamic id;
     dynamic rootUlid;
     dynamic parentUlid;
     dynamic grandparentUlid;
@@ -27,11 +27,11 @@ class SingleVideoEntity {
     bool downloadEnabled;
     bool isTrolling;
     String? body;
-    String? detectedLanguage;
-    String username;
+    dynamic detectedLanguage;
+    dynamic username;
     User user;
-    PostType postType;
-    String title;
+    dynamic postType;
+    String? title;
     List<SingleVideo> videos;
     dynamic videoProcessing;
     List<Tag> tags;
@@ -40,9 +40,9 @@ class SingleVideoEntity {
     bool isRepost;
     bool isRepostWithComment;
     dynamic embedUrl;
-    String? groupName;
-    String? groupId;
-    String? support;
+    dynamic groupName;
+    dynamic groupId;
+    dynamic support;
     DateTime createdAt;
     DateTime updatedAt;
     bool isDeleted;
@@ -113,7 +113,7 @@ class PostEngagement {
 
 @JsonSerializable()
 class Reaction {
-    Name name;
+    String? name;
     int count;
 
     Reaction({
@@ -124,16 +124,6 @@ class Reaction {
     factory Reaction.fromJson(Map<String, dynamic> json) => _$ReactionFromJson(json);
     Map<String, dynamic> toJson() => _$ReactionToJson(this);
 
-}
-
-enum Name {
-    HEART,
-    THUMBS_DOWN,
-    THUMBS_UP
-}
-
-enum PostType {
-    VIDEO
 }
 
 @JsonSerializable()
@@ -150,8 +140,8 @@ class Tag {
 }
 @JsonSerializable()
 class User {
-    String userId;
-    String avatar;
+    dynamic userId;
+    dynamic avatar;
     DateTime updatedAt;
     int updatedAtEpoch;
 
@@ -186,8 +176,8 @@ class UserEngagement {
 
 @JsonSerializable()
 class VideoProcessingClass {
-    String id;
-    String tmpUrl;
+    dynamic id;
+    dynamic tmpUrl;
     VideoClass video;
     VideoClass thumbnail;
     bool isProcessing;
@@ -210,10 +200,10 @@ class VideoProcessingClass {
 }
 @JsonSerializable()
 class VideoClass {
-    String url;
+    dynamic url;
     int? widthPx;
     int? heightPx;
-    ThumbnailMimeType? mimeType;
+    dynamic mimeType;
     dynamic duration;
 
     VideoClass({
@@ -229,16 +219,12 @@ class VideoClass {
 
 }
 
-enum ThumbnailMimeType {
-    IMAGE_JPEG
-}
-
 @JsonSerializable()
 class SingleVideo {
-    String url;
+    dynamic url;
     int? widthPx;
     int? heightPx;
-    String mimeType;
+    dynamic mimeType;
     int duration;
     int? lastPosition;
     VideoThumbnail thumbnail;
@@ -260,12 +246,12 @@ class SingleVideo {
 
 @JsonSerializable()
 class VideoThumbnail {
-    String url;
-    String m3U8Name;
-    String dashName;
+    dynamic url;
+    dynamic m3U8Name;
+    dynamic dashName;
     int widthPx;
     int heightPx;
-    ThumbnailMimeType mimeType;
+    dynamic mimeType;
 
     VideoThumbnail({
         required this.url,

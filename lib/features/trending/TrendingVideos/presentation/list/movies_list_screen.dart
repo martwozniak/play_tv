@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
 import 'package:provider/provider.dart';
 
 class MoviesList extends StatefulWidget {
@@ -11,13 +13,15 @@ class MoviesList extends StatefulWidget {
 }
 
 class _MoviesListState extends State<MoviesList> {
-  late Future<List<TrendingVideos>> _trendingVideosFuture;
-
+  late Future<TrendingVideosEntity> _trendingVideosFuture;
+  late Future<List<video.Video>> _mapToTrendingVideosFuture;
+  
   @override
   void initState() {
     super.initState();
     final repository = Provider.of<TrendingVideosRepository>(context, listen: false);
-    _trendingVideosFuture = repository.getTrendingVideos();
+    _trendingVideosFuture = repository.getTrendingVideosEntity();
+    _mapToTrendingVideosFuture = repository.mapToTrendingVideosFuture(_trendingVideosFuture);
   }
 
   @override
@@ -26,8 +30,8 @@ class _MoviesListState extends State<MoviesList> {
       appBar: AppBar(
         title: const Text('Trending Videos'),
       ),
-      body: FutureBuilder<List<TrendingVideos>>(
-        future: _trendingVideosFuture,
+      body: FutureBuilder<List<video.Video>>(
+        future: _mapToTrendingVideosFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             // Show loading indicator while fetching data
@@ -46,8 +50,7 @@ class _MoviesListState extends State<MoviesList> {
               itemBuilder: (context, index) {
                 final video = trendingVideos[index];
                 return ListTile(
-                  title: Text(video.ulids.first),
-                  subtitle: Text('Per Page: ${video.perPage}'),
+                  subtitle: Text('Per Page: ${video.body}'),
                   // You can customize this to display more details
                 );
               },

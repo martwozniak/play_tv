@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Video {
-  String get id => throw _privateConstructorUsedError;
-  String? get rootUlid => throw _privateConstructorUsedError;
-  String? get parentUlid => throw _privateConstructorUsedError;
-  String? get grandparentUlid => throw _privateConstructorUsedError;
+  dynamic get id => throw _privateConstructorUsedError;
+  dynamic get rootUlid => throw _privateConstructorUsedError;
+  dynamic get parentUlid => throw _privateConstructorUsedError;
+  dynamic get grandparentUlid => throw _privateConstructorUsedError;
   bool get isSensitive => throw _privateConstructorUsedError;
   bool get isPrivate => throw _privateConstructorUsedError;
   bool get commentsEnabled => throw _privateConstructorUsedError;
   bool get downloadEnabled => throw _privateConstructorUsedError;
   bool get isTrolling => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
-  String? get detectedLanguage => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
+  dynamic get detectedLanguage => throw _privateConstructorUsedError;
+  dynamic get username => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
-  String? get postType => throw _privateConstructorUsedError;
+  dynamic get postType => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   List<SingleVideo>? get videos => throw _privateConstructorUsedError;
   dynamic get videoProcessing => throw _privateConstructorUsedError;
@@ -39,9 +39,9 @@ mixin _$Video {
   bool? get isRepost => throw _privateConstructorUsedError;
   bool? get isRepostWithComment => throw _privateConstructorUsedError;
   dynamic get embedUrl => throw _privateConstructorUsedError;
-  String? get groupName => throw _privateConstructorUsedError;
-  String? get groupId => throw _privateConstructorUsedError;
-  String? get support => throw _privateConstructorUsedError;
+  dynamic get groupName => throw _privateConstructorUsedError;
+  dynamic get groupId => throw _privateConstructorUsedError;
+  dynamic get support => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   bool? get isDeleted => throw _privateConstructorUsedError;
@@ -62,20 +62,20 @@ abstract class $VideoCopyWith<$Res> {
       _$VideoCopyWithImpl<$Res, Video>;
   @useResult
   $Res call(
-      {String id,
-      String? rootUlid,
-      String? parentUlid,
-      String? grandparentUlid,
+      {dynamic id,
+      dynamic rootUlid,
+      dynamic parentUlid,
+      dynamic grandparentUlid,
       bool isSensitive,
       bool isPrivate,
       bool commentsEnabled,
       bool downloadEnabled,
       bool isTrolling,
       String? body,
-      String? detectedLanguage,
-      String? username,
+      dynamic detectedLanguage,
+      dynamic username,
       User? user,
-      String? postType,
+      dynamic postType,
       String? title,
       List<SingleVideo>? videos,
       dynamic videoProcessing,
@@ -85,9 +85,9 @@ abstract class $VideoCopyWith<$Res> {
       bool? isRepost,
       bool? isRepostWithComment,
       dynamic embedUrl,
-      String? groupName,
-      String? groupId,
-      String? support,
+      dynamic groupName,
+      dynamic groupId,
+      dynamic support,
       DateTime? createdAt,
       DateTime? updatedAt,
       bool? isDeleted,
@@ -116,7 +116,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? rootUlid = freezed,
     Object? parentUlid = freezed,
     Object? grandparentUlid = freezed,
@@ -151,22 +151,22 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
     Object? postEngagement = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       rootUlid: freezed == rootUlid
           ? _value.rootUlid
           : rootUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       parentUlid: freezed == parentUlid
           ? _value.parentUlid
           : parentUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       grandparentUlid: freezed == grandparentUlid
           ? _value.grandparentUlid
           : grandparentUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -194,11 +194,11 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
       detectedLanguage: freezed == detectedLanguage
           ? _value.detectedLanguage
           : detectedLanguage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -206,7 +206,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
       postType: freezed == postType
           ? _value.postType
           : postType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -246,15 +246,15 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
       groupName: freezed == groupName
           ? _value.groupName
           : groupName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       groupId: freezed == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       support: freezed == support
           ? _value.support
           : support // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -337,20 +337,20 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String? rootUlid,
-      String? parentUlid,
-      String? grandparentUlid,
+      {dynamic id,
+      dynamic rootUlid,
+      dynamic parentUlid,
+      dynamic grandparentUlid,
       bool isSensitive,
       bool isPrivate,
       bool commentsEnabled,
       bool downloadEnabled,
       bool isTrolling,
       String? body,
-      String? detectedLanguage,
-      String? username,
+      dynamic detectedLanguage,
+      dynamic username,
       User? user,
-      String? postType,
+      dynamic postType,
       String? title,
       List<SingleVideo>? videos,
       dynamic videoProcessing,
@@ -360,9 +360,9 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
       bool? isRepost,
       bool? isRepostWithComment,
       dynamic embedUrl,
-      String? groupName,
-      String? groupId,
-      String? support,
+      dynamic groupName,
+      dynamic groupId,
+      dynamic support,
       DateTime? createdAt,
       DateTime? updatedAt,
       bool? isDeleted,
@@ -392,7 +392,7 @@ class __$$VideoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? rootUlid = freezed,
     Object? parentUlid = freezed,
     Object? grandparentUlid = freezed,
@@ -427,22 +427,22 @@ class __$$VideoImplCopyWithImpl<$Res>
     Object? postEngagement = freezed,
   }) {
     return _then(_$VideoImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       rootUlid: freezed == rootUlid
           ? _value.rootUlid
           : rootUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       parentUlid: freezed == parentUlid
           ? _value.parentUlid
           : parentUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       grandparentUlid: freezed == grandparentUlid
           ? _value.grandparentUlid
           : grandparentUlid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       isSensitive: null == isSensitive
           ? _value.isSensitive
           : isSensitive // ignore: cast_nullable_to_non_nullable
@@ -470,11 +470,11 @@ class __$$VideoImplCopyWithImpl<$Res>
       detectedLanguage: freezed == detectedLanguage
           ? _value.detectedLanguage
           : detectedLanguage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -482,7 +482,7 @@ class __$$VideoImplCopyWithImpl<$Res>
       postType: freezed == postType
           ? _value.postType
           : postType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -522,15 +522,15 @@ class __$$VideoImplCopyWithImpl<$Res>
       groupName: freezed == groupName
           ? _value.groupName
           : groupName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       groupId: freezed == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       support: freezed == support
           ? _value.support
           : support // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -604,13 +604,13 @@ class _$VideoImpl implements _Video {
         _tags = tags;
 
   @override
-  final String id;
+  final dynamic id;
   @override
-  final String? rootUlid;
+  final dynamic rootUlid;
   @override
-  final String? parentUlid;
+  final dynamic parentUlid;
   @override
-  final String? grandparentUlid;
+  final dynamic grandparentUlid;
   @override
   final bool isSensitive;
   @override
@@ -624,13 +624,13 @@ class _$VideoImpl implements _Video {
   @override
   final String? body;
   @override
-  final String? detectedLanguage;
+  final dynamic detectedLanguage;
   @override
-  final String? username;
+  final dynamic username;
   @override
   final User? user;
   @override
-  final String? postType;
+  final dynamic postType;
   @override
   final String? title;
   final List<SingleVideo>? _videos;
@@ -666,11 +666,11 @@ class _$VideoImpl implements _Video {
   @override
   final dynamic embedUrl;
   @override
-  final String? groupName;
+  final dynamic groupName;
   @override
-  final String? groupId;
+  final dynamic groupId;
   @override
-  final String? support;
+  final dynamic support;
   @override
   final DateTime? createdAt;
   @override
@@ -696,13 +696,12 @@ class _$VideoImpl implements _Video {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VideoImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.rootUlid, rootUlid) ||
-                other.rootUlid == rootUlid) &&
-            (identical(other.parentUlid, parentUlid) ||
-                other.parentUlid == parentUlid) &&
-            (identical(other.grandparentUlid, grandparentUlid) ||
-                other.grandparentUlid == grandparentUlid) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.rootUlid, rootUlid) &&
+            const DeepCollectionEquality()
+                .equals(other.parentUlid, parentUlid) &&
+            const DeepCollectionEquality()
+                .equals(other.grandparentUlid, grandparentUlid) &&
             (identical(other.isSensitive, isSensitive) ||
                 other.isSensitive == isSensitive) &&
             (identical(other.isPrivate, isPrivate) ||
@@ -714,13 +713,11 @@ class _$VideoImpl implements _Video {
             (identical(other.isTrolling, isTrolling) ||
                 other.isTrolling == isTrolling) &&
             (identical(other.body, body) || other.body == body) &&
-            (identical(other.detectedLanguage, detectedLanguage) ||
-                other.detectedLanguage == detectedLanguage) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
+            const DeepCollectionEquality()
+                .equals(other.detectedLanguage, detectedLanguage) &&
+            const DeepCollectionEquality().equals(other.username, username) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.postType, postType) ||
-                other.postType == postType) &&
+            const DeepCollectionEquality().equals(other.postType, postType) &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._videos, _videos) &&
             const DeepCollectionEquality()
@@ -734,10 +731,9 @@ class _$VideoImpl implements _Video {
             (identical(other.isRepostWithComment, isRepostWithComment) ||
                 other.isRepostWithComment == isRepostWithComment) &&
             const DeepCollectionEquality().equals(other.embedUrl, embedUrl) &&
-            (identical(other.groupName, groupName) ||
-                other.groupName == groupName) &&
-            (identical(other.groupId, groupId) || other.groupId == groupId) &&
-            (identical(other.support, support) || other.support == support) &&
+            const DeepCollectionEquality().equals(other.groupName, groupName) &&
+            const DeepCollectionEquality().equals(other.groupId, groupId) &&
+            const DeepCollectionEquality().equals(other.support, support) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -756,20 +752,20 @@ class _$VideoImpl implements _Video {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        id,
-        rootUlid,
-        parentUlid,
-        grandparentUlid,
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(rootUlid),
+        const DeepCollectionEquality().hash(parentUlid),
+        const DeepCollectionEquality().hash(grandparentUlid),
         isSensitive,
         isPrivate,
         commentsEnabled,
         downloadEnabled,
         isTrolling,
         body,
-        detectedLanguage,
-        username,
+        const DeepCollectionEquality().hash(detectedLanguage),
+        const DeepCollectionEquality().hash(username),
         user,
-        postType,
+        const DeepCollectionEquality().hash(postType),
         title,
         const DeepCollectionEquality().hash(_videos),
         const DeepCollectionEquality().hash(videoProcessing),
@@ -779,9 +775,9 @@ class _$VideoImpl implements _Video {
         isRepost,
         isRepostWithComment,
         const DeepCollectionEquality().hash(embedUrl),
-        groupName,
-        groupId,
-        support,
+        const DeepCollectionEquality().hash(groupName),
+        const DeepCollectionEquality().hash(groupId),
+        const DeepCollectionEquality().hash(support),
         createdAt,
         updatedAt,
         isDeleted,
@@ -802,20 +798,20 @@ class _$VideoImpl implements _Video {
 
 abstract class _Video implements Video {
   const factory _Video(
-      {required final String id,
-      required final String? rootUlid,
-      required final String? parentUlid,
-      required final String? grandparentUlid,
+      {required final dynamic id,
+      required final dynamic rootUlid,
+      required final dynamic parentUlid,
+      required final dynamic grandparentUlid,
       required final bool isSensitive,
       required final bool isPrivate,
       required final bool commentsEnabled,
       required final bool downloadEnabled,
       required final bool isTrolling,
       required final String? body,
-      required final String? detectedLanguage,
-      required final String? username,
+      required final dynamic detectedLanguage,
+      required final dynamic username,
       required final User? user,
-      required final String? postType,
+      required final dynamic postType,
       required final String? title,
       required final List<SingleVideo>? videos,
       required final dynamic videoProcessing,
@@ -825,9 +821,9 @@ abstract class _Video implements Video {
       required final bool? isRepost,
       required final bool? isRepostWithComment,
       required final dynamic embedUrl,
-      required final String? groupName,
-      required final String? groupId,
-      required final String? support,
+      required final dynamic groupName,
+      required final dynamic groupId,
+      required final dynamic support,
       required final DateTime? createdAt,
       required final DateTime? updatedAt,
       required final bool? isDeleted,
@@ -837,13 +833,13 @@ abstract class _Video implements Video {
       required final PostEngagement? postEngagement}) = _$VideoImpl;
 
   @override
-  String get id;
+  dynamic get id;
   @override
-  String? get rootUlid;
+  dynamic get rootUlid;
   @override
-  String? get parentUlid;
+  dynamic get parentUlid;
   @override
-  String? get grandparentUlid;
+  dynamic get grandparentUlid;
   @override
   bool get isSensitive;
   @override
@@ -857,13 +853,13 @@ abstract class _Video implements Video {
   @override
   String? get body;
   @override
-  String? get detectedLanguage;
+  dynamic get detectedLanguage;
   @override
-  String? get username;
+  dynamic get username;
   @override
   User? get user;
   @override
-  String? get postType;
+  dynamic get postType;
   @override
   String? get title;
   @override
@@ -883,11 +879,11 @@ abstract class _Video implements Video {
   @override
   dynamic get embedUrl;
   @override
-  String? get groupName;
+  dynamic get groupName;
   @override
-  String? get groupId;
+  dynamic get groupId;
   @override
-  String? get support;
+  dynamic get support;
   @override
   DateTime? get createdAt;
   @override
@@ -913,8 +909,8 @@ abstract class _Video implements Video {
 
 /// @nodoc
 mixin _$User {
-  String? get userId => throw _privateConstructorUsedError;
-  String? get avatar => throw _privateConstructorUsedError;
+  dynamic get userId => throw _privateConstructorUsedError;
+  dynamic get avatar => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
   int get updatedAtEpoch => throw _privateConstructorUsedError;
 
@@ -930,7 +926,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String? userId, String? avatar, DateTime updatedAt, int updatedAtEpoch});
+      {dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
 }
 
 /// @nodoc
@@ -957,11 +953,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -982,7 +978,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? userId, String? avatar, DateTime updatedAt, int updatedAtEpoch});
+      {dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
 }
 
 /// @nodoc
@@ -1006,11 +1002,11 @@ class __$$UserImplCopyWithImpl<$Res>
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       avatar: freezed == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -1033,9 +1029,9 @@ class _$UserImpl implements _User {
       required this.updatedAtEpoch});
 
   @override
-  final String? userId;
+  final dynamic userId;
   @override
-  final String? avatar;
+  final dynamic avatar;
   @override
   final DateTime updatedAt;
   @override
@@ -1051,8 +1047,8 @@ class _$UserImpl implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserImpl &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality().equals(other.avatar, avatar) &&
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.updatedAtEpoch, updatedAtEpoch) ||
@@ -1060,8 +1056,12 @@ class _$UserImpl implements _User {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, userId, avatar, updatedAt, updatedAtEpoch);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(avatar),
+      updatedAt,
+      updatedAtEpoch);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1074,15 +1074,15 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final String? userId,
-      required final String? avatar,
+      {required final dynamic userId,
+      required final dynamic avatar,
       required final DateTime updatedAt,
       required final int updatedAtEpoch}) = _$UserImpl;
 
   @override
-  String? get userId;
+  dynamic get userId;
   @override
-  String? get avatar;
+  dynamic get avatar;
   @override
   DateTime get updatedAt;
   @override
@@ -1098,7 +1098,7 @@ abstract class _User implements User {
 
 /// @nodoc
 mixin _$Tag {
-  String? get name => throw _privateConstructorUsedError;
+  dynamic get name => throw _privateConstructorUsedError;
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
@@ -1111,7 +1111,7 @@ abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
       _$TagCopyWithImpl<$Res, Tag>;
   @useResult
-  $Res call({String? name});
+  $Res call({dynamic name});
 }
 
 /// @nodoc
@@ -1134,7 +1134,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -1145,7 +1145,7 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       __$$TagImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name});
+  $Res call({dynamic name});
 }
 
 /// @nodoc
@@ -1165,7 +1165,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
     ));
   }
 }
@@ -1176,7 +1176,7 @@ class _$TagImpl implements _Tag {
   const _$TagImpl({required this.name});
 
   @override
-  final String? name;
+  final dynamic name;
 
   @override
   String toString() {
@@ -1188,11 +1188,12 @@ class _$TagImpl implements _Tag {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TagImpl &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
@@ -1204,10 +1205,10 @@ class _$TagImpl implements _Tag {
 }
 
 abstract class _Tag implements Tag {
-  const factory _Tag({required final String? name}) = _$TagImpl;
+  const factory _Tag({required final dynamic name}) = _$TagImpl;
 
   @override
-  String? get name;
+  dynamic get name;
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
@@ -1747,10 +1748,10 @@ abstract class _Reaction implements Reaction {
 
 /// @nodoc
 mixin _$SingleVideo {
-  String? get url => throw _privateConstructorUsedError;
+  dynamic get url => throw _privateConstructorUsedError;
   int? get widthPx => throw _privateConstructorUsedError;
   int? get heightPx => throw _privateConstructorUsedError;
-  String? get mimeType => throw _privateConstructorUsedError;
+  dynamic get mimeType => throw _privateConstructorUsedError;
   int get duration => throw _privateConstructorUsedError;
   int? get lastPosition => throw _privateConstructorUsedError;
   VideoThumbnail get thumbnail => throw _privateConstructorUsedError;
@@ -1769,10 +1770,10 @@ abstract class $SingleVideoCopyWith<$Res> {
       _$SingleVideoCopyWithImpl<$Res, SingleVideo>;
   @useResult
   $Res call(
-      {String? url,
+      {dynamic url,
       int? widthPx,
       int? heightPx,
-      String? mimeType,
+      dynamic mimeType,
       int duration,
       int? lastPosition,
       VideoThumbnail thumbnail});
@@ -1807,7 +1808,7 @@ class _$SingleVideoCopyWithImpl<$Res, $Val extends SingleVideo>
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       widthPx: freezed == widthPx
           ? _value.widthPx
           : widthPx // ignore: cast_nullable_to_non_nullable
@@ -1819,7 +1820,7 @@ class _$SingleVideoCopyWithImpl<$Res, $Val extends SingleVideo>
       mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -1855,10 +1856,10 @@ abstract class _$$SingleVideoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? url,
+      {dynamic url,
       int? widthPx,
       int? heightPx,
-      String? mimeType,
+      dynamic mimeType,
       int duration,
       int? lastPosition,
       VideoThumbnail thumbnail});
@@ -1892,7 +1893,7 @@ class __$$SingleVideoImplCopyWithImpl<$Res>
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       widthPx: freezed == widthPx
           ? _value.widthPx
           : widthPx // ignore: cast_nullable_to_non_nullable
@@ -1904,7 +1905,7 @@ class __$$SingleVideoImplCopyWithImpl<$Res>
       mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
@@ -1934,13 +1935,13 @@ class _$SingleVideoImpl implements _SingleVideo {
       required this.thumbnail});
 
   @override
-  final String? url;
+  final dynamic url;
   @override
   final int? widthPx;
   @override
   final int? heightPx;
   @override
-  final String? mimeType;
+  final dynamic mimeType;
   @override
   final int duration;
   @override
@@ -1958,12 +1959,11 @@ class _$SingleVideoImpl implements _SingleVideo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SingleVideoImpl &&
-            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
             (identical(other.widthPx, widthPx) || other.widthPx == widthPx) &&
             (identical(other.heightPx, heightPx) ||
                 other.heightPx == heightPx) &&
-            (identical(other.mimeType, mimeType) ||
-                other.mimeType == mimeType) &&
+            const DeepCollectionEquality().equals(other.mimeType, mimeType) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
             (identical(other.lastPosition, lastPosition) ||
@@ -1973,8 +1973,15 @@ class _$SingleVideoImpl implements _SingleVideo {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, widthPx, heightPx, mimeType,
-      duration, lastPosition, thumbnail);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(url),
+      widthPx,
+      heightPx,
+      const DeepCollectionEquality().hash(mimeType),
+      duration,
+      lastPosition,
+      thumbnail);
 
   /// Create a copy of SingleVideo
   /// with the given fields replaced by the non-null parameter values.
@@ -1987,22 +1994,22 @@ class _$SingleVideoImpl implements _SingleVideo {
 
 abstract class _SingleVideo implements SingleVideo {
   const factory _SingleVideo(
-      {required final String? url,
+      {required final dynamic url,
       required final int? widthPx,
       required final int? heightPx,
-      required final String? mimeType,
+      required final dynamic mimeType,
       required final int duration,
       required final int? lastPosition,
       required final VideoThumbnail thumbnail}) = _$SingleVideoImpl;
 
   @override
-  String? get url;
+  dynamic get url;
   @override
   int? get widthPx;
   @override
   int? get heightPx;
   @override
-  String? get mimeType;
+  dynamic get mimeType;
   @override
   int get duration;
   @override
@@ -2020,10 +2027,10 @@ abstract class _SingleVideo implements SingleVideo {
 
 /// @nodoc
 mixin _$VideoThumbnail {
-  String? get url => throw _privateConstructorUsedError;
+  dynamic get url => throw _privateConstructorUsedError;
   int? get widthPx => throw _privateConstructorUsedError;
   int? get heightPx => throw _privateConstructorUsedError;
-  ThumbnailMimeType get mimeType => throw _privateConstructorUsedError;
+  dynamic get mimeType => throw _privateConstructorUsedError;
 
   /// Create a copy of VideoThumbnail
   /// with the given fields replaced by the non-null parameter values.
@@ -2038,8 +2045,7 @@ abstract class $VideoThumbnailCopyWith<$Res> {
           VideoThumbnail value, $Res Function(VideoThumbnail) then) =
       _$VideoThumbnailCopyWithImpl<$Res, VideoThumbnail>;
   @useResult
-  $Res call(
-      {String? url, int? widthPx, int? heightPx, ThumbnailMimeType mimeType});
+  $Res call({dynamic url, int? widthPx, int? heightPx, dynamic mimeType});
 }
 
 /// @nodoc
@@ -2060,13 +2066,13 @@ class _$VideoThumbnailCopyWithImpl<$Res, $Val extends VideoThumbnail>
     Object? url = freezed,
     Object? widthPx = freezed,
     Object? heightPx = freezed,
-    Object? mimeType = null,
+    Object? mimeType = freezed,
   }) {
     return _then(_value.copyWith(
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       widthPx: freezed == widthPx
           ? _value.widthPx
           : widthPx // ignore: cast_nullable_to_non_nullable
@@ -2075,10 +2081,10 @@ class _$VideoThumbnailCopyWithImpl<$Res, $Val extends VideoThumbnail>
           ? _value.heightPx
           : heightPx // ignore: cast_nullable_to_non_nullable
               as int?,
-      mimeType: null == mimeType
+      mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as ThumbnailMimeType,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -2091,8 +2097,7 @@ abstract class _$$VideoThumbnailImplCopyWith<$Res>
       __$$VideoThumbnailImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? url, int? widthPx, int? heightPx, ThumbnailMimeType mimeType});
+  $Res call({dynamic url, int? widthPx, int? heightPx, dynamic mimeType});
 }
 
 /// @nodoc
@@ -2111,13 +2116,13 @@ class __$$VideoThumbnailImplCopyWithImpl<$Res>
     Object? url = freezed,
     Object? widthPx = freezed,
     Object? heightPx = freezed,
-    Object? mimeType = null,
+    Object? mimeType = freezed,
   }) {
     return _then(_$VideoThumbnailImpl(
       url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as dynamic,
       widthPx: freezed == widthPx
           ? _value.widthPx
           : widthPx // ignore: cast_nullable_to_non_nullable
@@ -2126,10 +2131,10 @@ class __$$VideoThumbnailImplCopyWithImpl<$Res>
           ? _value.heightPx
           : heightPx // ignore: cast_nullable_to_non_nullable
               as int?,
-      mimeType: null == mimeType
+      mimeType: freezed == mimeType
           ? _value.mimeType
           : mimeType // ignore: cast_nullable_to_non_nullable
-              as ThumbnailMimeType,
+              as dynamic,
     ));
   }
 }
@@ -2144,13 +2149,13 @@ class _$VideoThumbnailImpl implements _VideoThumbnail {
       required this.mimeType});
 
   @override
-  final String? url;
+  final dynamic url;
   @override
   final int? widthPx;
   @override
   final int? heightPx;
   @override
-  final ThumbnailMimeType mimeType;
+  final dynamic mimeType;
 
   @override
   String toString() {
@@ -2162,17 +2167,20 @@ class _$VideoThumbnailImpl implements _VideoThumbnail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VideoThumbnailImpl &&
-            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.url, url) &&
             (identical(other.widthPx, widthPx) || other.widthPx == widthPx) &&
             (identical(other.heightPx, heightPx) ||
                 other.heightPx == heightPx) &&
-            (identical(other.mimeType, mimeType) ||
-                other.mimeType == mimeType));
+            const DeepCollectionEquality().equals(other.mimeType, mimeType));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, url, widthPx, heightPx, mimeType);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(url),
+      widthPx,
+      heightPx,
+      const DeepCollectionEquality().hash(mimeType));
 
   /// Create a copy of VideoThumbnail
   /// with the given fields replaced by the non-null parameter values.
@@ -2186,19 +2194,19 @@ class _$VideoThumbnailImpl implements _VideoThumbnail {
 
 abstract class _VideoThumbnail implements VideoThumbnail {
   const factory _VideoThumbnail(
-      {required final String? url,
+      {required final dynamic url,
       required final int? widthPx,
       required final int? heightPx,
-      required final ThumbnailMimeType mimeType}) = _$VideoThumbnailImpl;
+      required final dynamic mimeType}) = _$VideoThumbnailImpl;
 
   @override
-  String? get url;
+  dynamic get url;
   @override
   int? get widthPx;
   @override
   int? get heightPx;
   @override
-  ThumbnailMimeType get mimeType;
+  dynamic get mimeType;
 
   /// Create a copy of VideoThumbnail
   /// with the given fields replaced by the non-null parameter values.

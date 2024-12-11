@@ -5,20 +5,20 @@ part 'video.freezed.dart';
 @freezed
 class Video with _$Video {
   const factory Video({
-        required String id,
-        required String? rootUlid,
-        required String? parentUlid, 
-        required String? grandparentUlid,
+        required dynamic id,
+        required dynamic rootUlid,
+        required dynamic parentUlid, 
+        required dynamic grandparentUlid,
         required bool isSensitive,
         required bool isPrivate,
         required bool commentsEnabled,
         required bool downloadEnabled,
         required bool isTrolling,
         required String? body,
-        required String? detectedLanguage,
-        required String? username,
+        required dynamic detectedLanguage,
+        required dynamic username,
         required User? user,
-        required String? postType,
+        required dynamic postType,
         required String? title,
         required List<SingleVideo>? videos,
         required dynamic videoProcessing,
@@ -28,9 +28,9 @@ class Video with _$Video {
         required bool? isRepost,
         required bool? isRepostWithComment,
         required dynamic embedUrl,
-        required String? groupName,
-        required String? groupId,
-        required String? support,
+        required dynamic groupName,
+        required dynamic groupId,
+        required dynamic support,
         required DateTime? createdAt,
         required DateTime? updatedAt,
         required bool? isDeleted,
@@ -44,8 +44,8 @@ class Video with _$Video {
 @freezed
 class User with _$User {
     const factory User({
-        required String? userId,
-        required String? avatar,
+        required dynamic userId,
+        required dynamic avatar,
         required DateTime updatedAt,
         required int updatedAtEpoch,
   }) = _User;
@@ -54,7 +54,7 @@ class User with _$User {
 @freezed
 class Tag with _$Tag {
     const factory Tag({
-        required String? name,
+        required dynamic name,
     }) = _Tag;
 }
 
@@ -94,10 +94,10 @@ class Reaction with _$Reaction {
 @freezed
 class SingleVideo with _$SingleVideo {
     const factory SingleVideo({
-        required String? url,
+        required dynamic url,
         required int? widthPx,
         required int? heightPx,
-        required String? mimeType,
+        required dynamic mimeType,
         required int duration,
         required int? lastPosition,
         required VideoThumbnail thumbnail,
@@ -107,13 +107,9 @@ class SingleVideo with _$SingleVideo {
 @freezed
 class VideoThumbnail with _$VideoThumbnail {
     const factory VideoThumbnail({
-        required String? url,
+        required dynamic url,
         required int? widthPx,
         required int? heightPx,
-        required ThumbnailMimeType mimeType,
+        required dynamic mimeType,
     }) = _VideoThumbnail;
-}
-
-enum ThumbnailMimeType {
-    IMAGE_JPEG
 }

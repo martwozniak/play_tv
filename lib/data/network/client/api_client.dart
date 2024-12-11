@@ -42,6 +42,7 @@ class ApiClient {
 
     if (response.statusCode == 200) {
       final videoEntity = VideoEntity.fromJson(response.data as Map<String, dynamic>);
+      print(videoEntity);
       return videoEntity;
       // final List<dynamic> videosJson = response.data as List<dynamic>;
       // return videosJson.map((json) => VideoEntity.fromJson(json as Map<String, dynamic>)).toList();

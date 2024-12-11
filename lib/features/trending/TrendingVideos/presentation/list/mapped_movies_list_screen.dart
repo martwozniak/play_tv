@@ -20,7 +20,7 @@ class _MappedMoviesListState extends State<MappedMoviesList> {
     final repository = Provider.of<TrendingVideosRepository>(context, listen: false);
 
     final trendingVideos = await repository.getTrendingVideos();
-    _trendingVideosFuture = repository.mapToTrendingVideos(
+    _trendingVideosFuture = repository.mapToTrendingVideosFuture(
       trendingVideos
     ) as Future<List<TrendingVideos>>;
   }

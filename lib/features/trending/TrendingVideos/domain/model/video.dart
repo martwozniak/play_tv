@@ -90,7 +90,7 @@ class Reaction with _$Reaction {
 @freezed
 class SingleVideo with _$SingleVideo {
     const factory SingleVideo({
-        required dynamic url,
+        required String url,
         required int? widthPx,
         required int? heightPx,
         required dynamic mimeType,

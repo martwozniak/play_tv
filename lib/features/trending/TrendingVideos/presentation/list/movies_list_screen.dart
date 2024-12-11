@@ -4,6 +4,7 @@ import 'package:play_tv/features/trending/TrendingVideos/data/repository/trendin
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
 import 'package:provider/provider.dart';
+import 'package:play_tv/features/trending/TrendingVideos/presentation/details/movie_detail_screen.dart';
 
 class MoviesList extends StatefulWidget {
   const MoviesList({super.key});
@@ -56,12 +57,19 @@ class _MoviesListState extends State<MoviesList> {
                     children: [
                       Text('Per Page: ${video.videos.length}'),
                       SizedBox(height: 8),
-                      Image.network(video.videos[0].thumbnail.url),
+                      Image.network(video.videos[0].thumbnail.url as String),
                       Text(' ${video.title}'),
                       // Image.network(video.user.avatar),
                     ],
                   ),
-                  // You can customize this to display more details
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MovieDetailScreen(movie: video),
+                      ),
+                    );
+                  },
                 );
               },
             );

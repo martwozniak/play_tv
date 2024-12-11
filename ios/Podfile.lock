@@ -1,0 +1,46 @@
+PODS:
+  - audio_session (0.0.1):
+    - Flutter
+  - bitmovin_player (0.13.0):
+    - BitmovinPlayer (= 3.78.0)
+    - Flutter
+  - BitmovinAnalyticsCollector/BitmovinPlayer (3.9.0):
+    - BitmovinAnalyticsCollector/Core
+    - BitmovinPlayerCore (~> 3.48)
+  - BitmovinAnalyticsCollector/Core (3.9.0)
+  - BitmovinPlayer (3.78.0):
+    - BitmovinAnalyticsCollector/BitmovinPlayer (~> 3.0)
+    - BitmovinPlayerCore (= 3.78.0)
+  - BitmovinPlayerCore (3.78.0)
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - audio_session (from `.symlinks/plugins/audio_session/ios`)
+  - bitmovin_player (from `.symlinks/plugins/bitmovin_player/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - BitmovinAnalyticsCollector
+    - BitmovinPlayer
+    - BitmovinPlayerCore
+
+EXTERNAL SOURCES:
+  audio_session:
+    :path: ".symlinks/plugins/audio_session/ios"
+  bitmovin_player:
+    :path: ".symlinks/plugins/bitmovin_player/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  audio_session: 088d2483ebd1dc43f51d253d4a1c517d9a2e7207
+  bitmovin_player: 23076b298330525e94ea6166e3dafdce5b8a16fd
+  BitmovinAnalyticsCollector: d08e0b13bcc32973370e0d71f2faa739561bac0a
+  BitmovinPlayer: 7fc1bf0b32c540537c05664c7b60a559f1e47206
+  BitmovinPlayerCore: 37cc7a3299af139f19a0e2e88c1f476821242cb0
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
+
+COCOAPODS: 1.16.2

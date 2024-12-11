@@ -226,7 +226,7 @@ Map<String, dynamic> _$SingleVideoToJson(SingleVideo instance) =>
 
 VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) =>
     VideoThumbnail(
-      url: json['url'],
+      url: json['url'] as String,
       m3U8Name: json['m3U8Name'],
       dashName: json['dashName'],
       widthPx: (json['widthPx'] as num).toInt(),

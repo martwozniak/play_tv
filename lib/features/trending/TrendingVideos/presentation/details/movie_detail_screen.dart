@@ -15,9 +15,10 @@ class MovieDetailScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: ListView(
           children: [
             Image.network(movie.videos[0].thumbnail.url),
+            // BasicPlayback(video: movie),
             SizedBox(height: 16),
             Text(
               movie.title,

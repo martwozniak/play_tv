@@ -246,7 +246,7 @@ class SingleVideo {
 
 @JsonSerializable()
 class VideoThumbnail {
-    dynamic url;
+    String url;
     dynamic m3U8Name;
     dynamic dashName;
     int widthPx;

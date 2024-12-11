@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/video_entity.dart';
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/user_entity.dart' as u;
 
 class ApiClient {
   late final Dio _dio;
@@ -48,6 +49,23 @@ class ApiClient {
       // return videosJson.map((json) => VideoEntity.fromJson(json as Map<String, dynamic>)).toList();
     } else {
       throw Exception('Failed to map trending videos');
+    }
+  }
+
+  Future<u.UserEntity> getUser(String ulid) async {
+    final response = await _dio.post(
+      'profile', 
+      data: {
+        "ulids": [ulid],
+      },
+    );
+    
+    if (response.statusCode != null && response.statusCode! >= 400) {
+      throw Exception('Failed to get user profile');
+    } else if (response.statusCode == 200 && response.data is Map<String, dynamic>) {
+      return u.UserEntity.fromJson(response.data as Map<String, dynamic>);
+    } else {
+      throw Exception('Failed to get user profile');
     }
   }
 }

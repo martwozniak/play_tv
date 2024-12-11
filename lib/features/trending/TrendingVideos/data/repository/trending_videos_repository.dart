@@ -5,6 +5,7 @@ import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_v
 import 'dart:developer';
 
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
 
 class TrendingVideosRepository {
   final ApiClient apiClient;
@@ -42,4 +43,11 @@ class TrendingVideosRepository {
     print(videoEntities);
     return networkMapper.toVideos([videoEntities]);
   }
+
+  Future<List<user.User>> getUser(String ulid) async {
+    final userEntity = await apiClient.getUser(ulid);
+    inspect(userEntity);
+    return networkMapper.toUsers(userEntity.data);
+  }
 }
+

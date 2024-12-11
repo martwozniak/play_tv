@@ -67,7 +67,14 @@ class _MoviesListState extends State<MoviesList> {
                       SizedBox(height: 8),
                       Stack(
                         children: [
-                          Image.network(video.videos[0].thumbnail.url as String),
+                          AspectRatio(
+                            aspectRatio: 16 / 9,
+                            child: Image.network(
+                              video.videos[0].thumbnail.url as String,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                           Positioned(
                             right: 8,
                             bottom: 8,

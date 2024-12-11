@@ -76,6 +76,7 @@ class _BasicPlaybackState extends State<BasicPlayback> {
           Container(
             margin: const EdgeInsets.all(8),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
             video.title,

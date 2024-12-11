@@ -28,37 +28,42 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       commentsEnabled: json['commentsEnabled'] as bool,
       downloadEnabled: json['downloadEnabled'] as bool,
       isTrolling: json['isTrolling'] as bool,
-      body: json['body'] as String,
-      detectedLanguage:
-          $enumDecode(_$DetectedLanguageEnumMap, json['detectedLanguage']),
-      username: json['username'] as String,
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
-      postType: $enumDecode(_$PostTypeEnumMap, json['postType']),
-      title: json['title'] as String,
-      videos: (json['videos'] as List<dynamic>)
-          .map((e) => SingleVideo.fromJson(e as Map<String, dynamic>))
+      body: json['body'] as String?,
+      detectedLanguage: json['detectedLanguage'] as String?,
+      username: json['username'] as String?,
+      user: json['user'] == null
+          ? null
+          : User.fromJson(json['user'] as Map<String, dynamic>),
+      postType: $enumDecodeNullable(_$PostTypeEnumMap, json['postType']),
+      title: json['title'] as String?,
+      videos: (json['videos'] as List<dynamic>?)
+          ?.map((e) => SingleVideo.fromJson(e as Map<String, dynamic>))
           .toList(),
       videoProcessing: json['videoProcessing'],
-      tags: (json['tags'] as List<dynamic>)
-          .map((e) => Tag.fromJson(e as Map<String, dynamic>))
+      tags: (json['tags'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      edited: json['edited'] as bool,
+      edited: json['edited'] as bool?,
       userReaction: json['userReaction'],
-      isRepost: json['isRepost'] as bool,
-      isRepostWithComment: json['isRepostWithComment'] as bool,
+      isRepost: json['isRepost'] as bool?,
+      isRepostWithComment: json['isRepostWithComment'] as bool?,
       embedUrl: json['embedUrl'],
-      groupName: $enumDecode(_$GroupNameEnumMap, json['groupName']),
-      groupId: $enumDecode(_$GroupIdEnumMap, json['groupId']),
-      support: json['support'] as String,
+      groupName: json['groupName'] as String?,
+      groupId: json['groupId'] as String?,
+      support: json['support'] as String?,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       isDeleted: json['isDeleted'] as bool,
       isHidden: json['isHidden'],
       isProcessing: json['isProcessing'] as bool,
-      userEngagement: UserEngagement.fromJson(
-          json['userEngagement'] as Map<String, dynamic>),
-      postEngagement: PostEngagement.fromJson(
-          json['postEngagement'] as Map<String, dynamic>),
+      userEngagement: json['userEngagement'] == null
+          ? null
+          : UserEngagement.fromJson(
+              json['userEngagement'] as Map<String, dynamic>),
+      postEngagement: json['postEngagement'] == null
+          ? null
+          : PostEngagement.fromJson(
+              json['postEngagement'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
@@ -73,10 +78,10 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'downloadEnabled': instance.downloadEnabled,
       'isTrolling': instance.isTrolling,
       'body': instance.body,
-      'detectedLanguage': _$DetectedLanguageEnumMap[instance.detectedLanguage]!,
+      'detectedLanguage': instance.detectedLanguage,
       'username': instance.username,
       'user': instance.user,
-      'postType': _$PostTypeEnumMap[instance.postType]!,
+      'postType': _$PostTypeEnumMap[instance.postType],
       'title': instance.title,
       'videos': instance.videos,
       'videoProcessing': instance.videoProcessing,
@@ -86,8 +91,8 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'isRepost': instance.isRepost,
       'isRepostWithComment': instance.isRepostWithComment,
       'embedUrl': instance.embedUrl,
-      'groupName': _$GroupNameEnumMap[instance.groupName]!,
-      'groupId': _$GroupIdEnumMap[instance.groupId]!,
+      'groupName': instance.groupName,
+      'groupId': instance.groupId,
       'support': instance.support,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt.toIso8601String(),
@@ -98,21 +103,8 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'postEngagement': instance.postEngagement,
     };
 
-const _$DetectedLanguageEnumMap = {
-  DetectedLanguage.EN: 'EN',
-};
-
 const _$PostTypeEnumMap = {
   PostType.VIDEO: 'VIDEO',
-};
-
-const _$GroupNameEnumMap = {
-  GroupName.DEFAULT: 'DEFAULT',
-};
-
-const _$GroupIdEnumMap = {
-  GroupId.THE_01_GSSZ7_XSRQZTH07_CSTD90_T179:
-      'THE_01_GSSZ7_XSRQZTH07_CSTD90_T179',
 };
 
 PostEngagement _$PostEngagementFromJson(Map<String, dynamic> json) =>

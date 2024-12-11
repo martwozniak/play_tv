@@ -26,30 +26,30 @@ class SingleVideoEntity {
     bool commentsEnabled;
     bool downloadEnabled;
     bool isTrolling;
-    String body;
-    DetectedLanguage detectedLanguage;
-    String username;
-    User user;
-    PostType postType;
-    String title;
-    List<SingleVideo> videos;
+    String? body;
+    String? detectedLanguage;
+    String? username;
+    User? user;
+    PostType? postType;
+    String? title;
+    List<SingleVideo>? videos;
     dynamic videoProcessing;
-    List<Tag> tags;
-    bool edited;
+    List<Tag>? tags;
+    bool? edited;
     dynamic userReaction;
-    bool isRepost;
-    bool isRepostWithComment;
+    bool? isRepost;
+    bool? isRepostWithComment;
     dynamic embedUrl;
-    GroupName groupName;
-    GroupId groupId;
-    String support;
+    String? groupName;
+    String? groupId;
+    String? support;
     DateTime createdAt;
     DateTime updatedAt;
     bool isDeleted;
     dynamic isHidden;
     bool isProcessing;
-    UserEngagement userEngagement;
-    PostEngagement postEngagement;
+    UserEngagement? userEngagement;
+    PostEngagement? postEngagement;
 
     SingleVideoEntity({
         required this.id,
@@ -89,17 +89,6 @@ class SingleVideoEntity {
 
 }
 
-enum DetectedLanguage {
-    EN
-}
-
-enum GroupId {
-    THE_01_GSSZ7_XSRQZTH07_CSTD90_T179
-}
-
-enum GroupName {
-    DEFAULT
-}
 @JsonSerializable()
 class PostEngagement {
     int totalCommentCount;

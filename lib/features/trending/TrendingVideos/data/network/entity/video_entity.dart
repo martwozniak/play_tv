@@ -26,8 +26,8 @@ class SingleVideoEntity {
     bool commentsEnabled;
     bool downloadEnabled;
     bool isTrolling;
-    String body;
-    DetectedLanguage detectedLanguage;
+    String? body;
+    String? detectedLanguage;
     String username;
     User user;
     PostType postType;
@@ -40,9 +40,9 @@ class SingleVideoEntity {
     bool isRepost;
     bool isRepostWithComment;
     dynamic embedUrl;
-    GroupName groupName;
-    GroupId groupId;
-    String support;
+    String? groupName;
+    String? groupId;
+    String? support;
     DateTime createdAt;
     DateTime updatedAt;
     bool isDeleted;
@@ -92,17 +92,6 @@ class SingleVideoEntity {
 
 }
 
-enum DetectedLanguage {
-    EN
-}
-
-enum GroupId {
-    THE_01_GSSZ7_XSRQZTH07_CSTD90_T179
-}
-
-enum GroupName {
-    DEFAULT
-}
 @JsonSerializable()
 class PostEngagement {
     int totalCommentCount;
@@ -249,7 +238,7 @@ class SingleVideo {
     String url;
     int? widthPx;
     int? heightPx;
-    PurpleMimeType mimeType;
+    String mimeType;
     int duration;
     int? lastPosition;
     VideoThumbnail thumbnail;
@@ -267,10 +256,6 @@ class SingleVideo {
     factory SingleVideo.fromJson(Map<String, dynamic> json) => _$SingleVideoFromJson(json);
     Map<String, dynamic> toJson() => _$SingleVideoToJson(this);
 
-}
-
-enum PurpleMimeType {
-    VIDEO_MP4
 }
 
 @JsonSerializable()

@@ -28,9 +28,8 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       commentsEnabled: json['commentsEnabled'] as bool,
       downloadEnabled: json['downloadEnabled'] as bool,
       isTrolling: json['isTrolling'] as bool,
-      body: json['body'] as String,
-      detectedLanguage:
-          $enumDecode(_$DetectedLanguageEnumMap, json['detectedLanguage']),
+      body: json['body'] as String?,
+      detectedLanguage: json['detectedLanguage'] as String?,
       username: json['username'] as String,
       user: User.fromJson(json['user'] as Map<String, dynamic>),
       postType: $enumDecode(_$PostTypeEnumMap, json['postType']),
@@ -47,9 +46,9 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       isRepost: json['isRepost'] as bool,
       isRepostWithComment: json['isRepostWithComment'] as bool,
       embedUrl: json['embedUrl'],
-      groupName: $enumDecode(_$GroupNameEnumMap, json['groupName']),
-      groupId: $enumDecode(_$GroupIdEnumMap, json['groupId']),
-      support: json['support'] as String,
+      groupName: json['groupName'] as String?,
+      groupId: json['groupId'] as String?,
+      support: json['support'] as String?,
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       isDeleted: json['isDeleted'] as bool,
@@ -73,7 +72,7 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'downloadEnabled': instance.downloadEnabled,
       'isTrolling': instance.isTrolling,
       'body': instance.body,
-      'detectedLanguage': _$DetectedLanguageEnumMap[instance.detectedLanguage]!,
+      'detectedLanguage': instance.detectedLanguage,
       'username': instance.username,
       'user': instance.user,
       'postType': _$PostTypeEnumMap[instance.postType]!,
@@ -86,8 +85,8 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'isRepost': instance.isRepost,
       'isRepostWithComment': instance.isRepostWithComment,
       'embedUrl': instance.embedUrl,
-      'groupName': _$GroupNameEnumMap[instance.groupName]!,
-      'groupId': _$GroupIdEnumMap[instance.groupId]!,
+      'groupName': instance.groupName,
+      'groupId': instance.groupId,
       'support': instance.support,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt.toIso8601String(),
@@ -98,21 +97,8 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'postEngagement': instance.postEngagement,
     };
 
-const _$DetectedLanguageEnumMap = {
-  DetectedLanguage.EN: 'EN',
-};
-
 const _$PostTypeEnumMap = {
   PostType.VIDEO: 'VIDEO',
-};
-
-const _$GroupNameEnumMap = {
-  GroupName.DEFAULT: 'DEFAULT',
-};
-
-const _$GroupIdEnumMap = {
-  GroupId.THE_01_GSSZ7_XSRQZTH07_CSTD90_T179:
-      'THE_01_GSSZ7_XSRQZTH07_CSTD90_T179',
 };
 
 PostEngagement _$PostEngagementFromJson(Map<String, dynamic> json) =>
@@ -235,7 +221,7 @@ SingleVideo _$SingleVideoFromJson(Map<String, dynamic> json) => SingleVideo(
       url: json['url'] as String,
       widthPx: (json['widthPx'] as num?)?.toInt(),
       heightPx: (json['heightPx'] as num?)?.toInt(),
-      mimeType: $enumDecode(_$PurpleMimeTypeEnumMap, json['mimeType']),
+      mimeType: json['mimeType'] as String,
       duration: (json['duration'] as num).toInt(),
       lastPosition: (json['lastPosition'] as num?)?.toInt(),
       thumbnail:
@@ -247,15 +233,11 @@ Map<String, dynamic> _$SingleVideoToJson(SingleVideo instance) =>
       'url': instance.url,
       'widthPx': instance.widthPx,
       'heightPx': instance.heightPx,
-      'mimeType': _$PurpleMimeTypeEnumMap[instance.mimeType]!,
+      'mimeType': instance.mimeType,
       'duration': instance.duration,
       'lastPosition': instance.lastPosition,
       'thumbnail': instance.thumbnail,
     };
-
-const _$PurpleMimeTypeEnumMap = {
-  PurpleMimeType.VIDEO_MP4: 'VIDEO_MP4',
-};
 
 VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) =>
     VideoThumbnail(

@@ -56,8 +56,8 @@ class NetworkMapper {
         commentsEnabled: singleVideoEntity.commentsEnabled,
         downloadEnabled: singleVideoEntity.downloadEnabled,
         isTrolling: singleVideoEntity.isTrolling,
-        body: singleVideoEntity.body,
-        detectedLanguage: singleVideoEntity.detectedLanguage.name,
+        body: singleVideoEntity.body ?? '',
+        detectedLanguage: singleVideoEntity.detectedLanguage ?? '',
         username: singleVideoEntity.username,
         user: User(
           userId: singleVideoEntity.user.userId,
@@ -71,7 +71,7 @@ class NetworkMapper {
           url: video.url,
           widthPx: video.widthPx,
           heightPx: video.heightPx,
-          mimeType: PurpleMimeType.values.firstWhere((e) => e.name == video.mimeType.name),
+          mimeType: video.mimeType,
           duration: video.duration,
           lastPosition: video.lastPosition,
           thumbnail: VideoThumbnail(
@@ -87,7 +87,7 @@ class NetworkMapper {
         userReaction: singleVideoEntity.userReaction,
         isRepost: singleVideoEntity.isRepost,
         isRepostWithComment: singleVideoEntity.isRepostWithComment,
-        embedUrl: singleVideoEntity.embedUrl,
+        embedUrl: singleVideoEntity.embedUrl ?? '',
         postEngagement: PostEngagement(
           totalCommentCount: singleVideoEntity.postEngagement.totalCommentCount,
           commentCount: singleVideoEntity.postEngagement.commentCount,
@@ -102,9 +102,9 @@ class NetworkMapper {
         createdAt: singleVideoEntity.createdAt,
         updatedAt: singleVideoEntity.updatedAt,
         isDeleted: singleVideoEntity.isDeleted,
-        groupName: singleVideoEntity.groupName.name,
-        groupId: singleVideoEntity.groupId.name,
-        support: singleVideoEntity.support,
+        groupName: singleVideoEntity.groupName ?? '',
+        groupId: singleVideoEntity.groupId ?? '',
+        support: singleVideoEntity.support ?? '',
         isHidden: singleVideoEntity.isHidden,
         isProcessing: singleVideoEntity.isProcessing,
       );

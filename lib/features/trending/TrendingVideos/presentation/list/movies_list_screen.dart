@@ -75,7 +75,7 @@ class _MoviesListState extends State<MoviesList> {
                               color: Colors.black54,
                               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
                               child: Text(
-                                'Duration: ${_formatDuration(video.videos[0].duration)}',
+                                '${_formatDuration(video.videos[0].duration)}',
                                 style: TextStyle(color: Colors.white, fontSize: 12),
                               ),
                             ),

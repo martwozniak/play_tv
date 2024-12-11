@@ -17,12 +17,15 @@ class BasicPlayback extends StatefulWidget {
 }
 
 class _BasicPlaybackState extends State<BasicPlayback> {
+  late final Video video;
+
   final _sourceConfig = SourceConfig(
     url: isIOS
         ? 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8'
         : 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
     type: isIOS ? SourceType.hls : SourceType.dash,
   );
+
   final _player = Player(
     config: const PlayerConfig(
       key: Env.bitmovinPlayerLicenseKey,
@@ -35,8 +38,10 @@ class _BasicPlaybackState extends State<BasicPlayback> {
 
   @override
   void initState() {
-    _player.loadSourceConfig(_sourceConfig);
     super.initState();
+    video = widget.video;
+    // _player.loadSourceConfig(_sourceConfig);
+    _player.loadSourceConfig(SourceConfig(url: video.videos[0].url as String, type: SourceType.progressive));
   }
 
   @override
@@ -69,11 +74,11 @@ class _BasicPlaybackState extends State<BasicPlayback> {
             ),
           ),
           Text(
-            widget.video.title,
+            video.title,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
-            widget.video.body,
+            video.body,
             style: TextStyle(fontSize: 16),
           ),
         ],

@@ -2,6 +2,7 @@ import 'package:play_tv/data/network/client/api_client.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/network_mapper.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
+import 'dart:developer';
 
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
 
@@ -27,8 +28,8 @@ class TrendingVideosRepository {
     TrendingVideosEntity trendingVideosEntity
   ) async {
     final videoEntities = await apiClient.mapToTrendingVideos(trendingVideosEntity);
-    print('videoEntities');
-    print(videoEntities);
+    inspect(videoEntities);
+
     return networkMapper.toVideos([videoEntities]);
   }
 

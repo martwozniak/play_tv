@@ -18,7 +18,6 @@ class MovieDetailScreen extends StatelessWidget {
         child: ListView(
           children: [
             Image.network(movie.videos[0].thumbnail.url),
-            // BasicPlayback(video: movie),
             SizedBox(height: 16),
             Text(
               movie.title,

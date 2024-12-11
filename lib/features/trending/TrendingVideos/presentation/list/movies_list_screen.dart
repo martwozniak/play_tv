@@ -22,7 +22,9 @@ class _MoviesListState extends State<MoviesList> {
   void initState() {
     super.initState();
     final repository = Provider.of<TrendingVideosRepository>(context, listen: false);
-    _trendingVideosFuture = repository.getTrendingVideosEntity();
+    _trendingVideosFuture = repository.getTrendingVideosEntity().then((value) {
+      return value;
+    });
     _mapToTrendingVideosFuture = repository.mapToTrendingVideosFuture(_trendingVideosFuture);
   }
 

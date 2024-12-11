@@ -43,13 +43,9 @@ class NetworkMapper {
   }
 
 
-  Video toVideo(entity.VideoEntity videoEntity) {
+  Video toVideo(entity.SingleVideoEntity singleVideoEntity) {
     try {
-      if (videoEntity.data.isEmpty) {
-        throw MapperException<entity.VideoEntity, Video>('VideoEntity data is empty');
-      }
       
-      final singleVideoEntity = videoEntity.data.first;
       return Video(
         id: singleVideoEntity.id,
         rootUlid: singleVideoEntity.rootUlid?.toString() ?? '',
@@ -122,7 +118,9 @@ class NetworkMapper {
     for (final entity in videoEntities) {
       if (entity.data.isNotEmpty) {
         try {
-          videoList.add(toVideo(entity));
+          entity.data.forEach((singleVideoEntity) {
+            videoList.add(toVideo(singleVideoEntity));
+          });
         } catch (e) {
           logger.w('Failed to map VideoEntity to Video: $e');
         }

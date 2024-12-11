@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
 
+
 class MovieDetailScreen extends StatelessWidget {
   final Video movie;
 
@@ -23,6 +24,10 @@ class MovieDetailScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             // Add more movie details here
+            Text(
+              movie.body,
+              style: TextStyle(fontSize: 18),
+            ),
           ],
         ),
       ),

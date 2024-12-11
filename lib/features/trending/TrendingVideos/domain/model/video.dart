@@ -14,12 +14,12 @@ class Video with _$Video {
         required bool commentsEnabled,
         required bool downloadEnabled,
         required bool isTrolling,
-        required String? body,
+        required String body,
         required dynamic detectedLanguage,
         required dynamic username,
         required User? user,
         required dynamic postType,
-        required dynamic title,
+        required String title,
         required List<SingleVideo> videos,
         required dynamic videoProcessing,
         required List<Tag>? tags,
@@ -90,7 +90,7 @@ class Reaction with _$Reaction {
 @freezed
 class SingleVideo with _$SingleVideo {
     const factory SingleVideo({
-        required String url,
+        required dynamic url,
         required int? widthPx,
         required int? heightPx,
         required dynamic mimeType,
@@ -103,7 +103,7 @@ class SingleVideo with _$SingleVideo {
 @freezed
 class VideoThumbnail with _$VideoThumbnail {
     const factory VideoThumbnail({
-        required dynamic url,
+        required String url,
         required int? widthPx,
         required int? heightPx,
         required dynamic mimeType,

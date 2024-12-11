@@ -28,7 +28,7 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       commentsEnabled: json['commentsEnabled'] as bool,
       downloadEnabled: json['downloadEnabled'] as bool,
       isTrolling: json['isTrolling'] as bool,
-      body: json['body'] as String?,
+      body: json['body'] as String,
       detectedLanguage: json['detectedLanguage'],
       username: json['username'],
       user: User.fromJson(json['user'] as Map<String, dynamic>),

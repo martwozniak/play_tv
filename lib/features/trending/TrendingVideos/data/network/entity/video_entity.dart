@@ -26,7 +26,7 @@ class SingleVideoEntity {
     bool commentsEnabled;
     bool downloadEnabled;
     bool isTrolling;
-    String? body;
+    String body;
     dynamic detectedLanguage;
     dynamic username;
     User user;

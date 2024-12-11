@@ -59,29 +59,36 @@ class _BasicPlaybackState extends State<BasicPlayback> {
       body: ListView(
         children: [
           PlayerViewContainer(player: _player),
+          // Container(
+          //   margin: const EdgeInsets.only(top: 5),
+          //   child: Controls(
+          //     onLoadPressed: () => _player.loadSourceConfig(_sourceConfig),
+          //     onPlayPressed: _player.play,
+          //     onPausePressed: _player.pause,
+          //     onMutePressed: _player.mute,
+          //     onUnmutePressed: _player.unmute,
+          //     onSkipForwardPressed: () async =>
+          //         _player.seek(await _player.currentTime + 10),
+          //     onSkipBackwardPressed: () async =>
+          //         _player.seek(await _player.currentTime - 10),
+          //   ),
+          // ),
           Container(
-            margin: const EdgeInsets.only(top: 5),
-            child: Controls(
-              onLoadPressed: () => _player.loadSourceConfig(_sourceConfig),
-              onPlayPressed: _player.play,
-              onPausePressed: _player.pause,
-              onMutePressed: _player.mute,
-              onUnmutePressed: _player.unmute,
-              onSkipForwardPressed: () async =>
-                  _player.seek(await _player.currentTime + 10),
-              onSkipBackwardPressed: () async =>
-                  _player.seek(await _player.currentTime - 10),
-            ),
-          ),
-          Text(
+            margin: const EdgeInsets.all(8),
+            child: Column(
+              children: [
+                Text(
             video.title,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Text(
             video.body,
             style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
-        ],
+          ),
+        ], 
       ),
     );
   }

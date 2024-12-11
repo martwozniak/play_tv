@@ -82,10 +82,38 @@ class _MoviesListState extends State<MoviesList> {
                           ),
                         ],
                       ),
-                      Image.network(video.user.avatar as String),
-                      Text(' ${video.title}', style: TextStyle(fontWeight: FontWeight.bold)),
-                      Text('Author: ${video.username}'),
-                      Text('Views: ${video.postEngagement.views}'),
+                      Container(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              children: [
+                                Image.network(video.user.avatar as String),
+                              ],
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    video.title,
+                                    style: const TextStyle(fontWeight: FontWeight.bold),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text('Author: ${video.username}'),
+                                  Text('Views: ${video.postEngagement.views}'),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      // Image.network(video.user.avatar as String),
+                      // Text('${video.title}', style: TextStyle(fontWeight: FontWeight.bold)),
+                      // Text('Author: ${video.username}'),
+                      // Text('Views: ${video.postEngagement.views}'),
                     ],
                   ),
                   onTap: () {

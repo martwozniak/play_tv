@@ -16,7 +16,7 @@ class TrendingVideosRepository {
 
   Future<List<TrendingVideos>> getTrendingVideos() async {
     final trendingVideosEntity = await apiClient.getTrendingVideos();
-    return networkMapper.toTrendingVideosList(trendingVideosEntity);
+    return networkMapper.toTrendingVideosList([trendingVideosEntity]);
   }
 
   Future<List<video.Video>> mapToTrendingVideos(
@@ -25,6 +25,6 @@ class TrendingVideosRepository {
     final videoEntities = await apiClient.mapToTrendingVideos(trendingVideosEntity);
     print('videoEntities');
     print(videoEntities);
-    return networkMapper.toVideos(videoEntities);
+    return networkMapper.toVideos([videoEntities]);
   }
 }

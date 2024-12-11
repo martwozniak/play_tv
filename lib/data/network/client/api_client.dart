@@ -13,7 +13,7 @@ class ApiClient {
     ))..interceptors.add(LogInterceptor(requestBody: true, responseBody: true),);
   }
 
-  Future<List<TrendingVideosEntity>> getTrendingVideos() async {
+  Future<TrendingVideosEntity> getTrendingVideos() async {
     final response = await _dio.get('trending/videos/last7days');
 
     if (response.statusCode != null && response.statusCode! >= 400) {
@@ -23,13 +23,13 @@ class ApiClient {
       final trendingVideosEntity = TrendingVideosEntity.fromJson(response.data as Map<String, dynamic>);
       final result = await mapToTrendingVideos(trendingVideosEntity);
       print(result);
-      return [trendingVideosEntity];
+      return trendingVideosEntity;
     } else {
       throw Exception('Failed to get trending videos');
     }
   }
 
-  Future<List<VideoEntity>> mapToTrendingVideos(TrendingVideosEntity trendingVideosEntity) async {
+  Future<VideoEntity> mapToTrendingVideos(TrendingVideosEntity trendingVideosEntity) async {
     // final videoIds = trendingVideosEntity.map((video) => video.ulids).toList();
     // trendingVideosEntity.ulids
     final response = await _dio.post(
@@ -41,8 +41,10 @@ class ApiClient {
     );
 
     if (response.statusCode == 200) {
-      final List<dynamic> videosJson = response.data as List<dynamic>;
-      return videosJson.map((json) => VideoEntity.fromJson(json as Map<String, dynamic>)).toList();
+      final videoEntity = VideoEntity.fromJson(response.data as Map<String, dynamic>);
+      return videoEntity;
+      // final List<dynamic> videosJson = response.data as List<dynamic>;
+      // return videosJson.map((json) => VideoEntity.fromJson(json as Map<String, dynamic>)).toList();
     } else {
       throw Exception('Failed to map trending videos');
     }

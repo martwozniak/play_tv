@@ -45,7 +45,8 @@ class _BasicPlaybackState extends State<BasicPlayback> {
     video = widget.video;
     user = widget.user;
     // _player.loadSourceConfig(_sourceConfig);
-    _player.loadSourceConfig(SourceConfig(url: video.videos[0].url as String, type: getSourceTypeFromUrl(video.videos[0].url as String)));
+    _player.loadSourceConfig(
+        SourceConfig(url: video.videos[0].url as String, type: getSourceTypeFromUrl(video.videos[0].url as String)));
   }
 
   @override
@@ -69,58 +70,59 @@ class _BasicPlaybackState extends State<BasicPlayback> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-            video.title,
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          if (user != null)
-          Row(children: [
-            // image from internet
-              CircleAvatar(
-                                      backgroundImage: NetworkImage(user!.avatar),
-                                      radius: 20,
-                                      // Add error handling for avatar image
-                                      onBackgroundImageError: (exception, stackTrace) {
-                                        print('Error loading avatar: $exception');
-                                      },
-                                    ),
+                  video.title,
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                if (user != null)
+                  Row(
+                    children: [
+                      // image from internet
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(user!.avatar),
+                        radius: 20,
+                        // Add error handling for avatar image
+                        onBackgroundImageError: (exception, stackTrace) {
+                          print('Error loading avatar: $exception');
+                        },
+                      ),
 
-              Container(
-                margin: EdgeInsets.all(8),
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      user!.name,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    Text(
-                      user!.username,
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ],
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              user!.name,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            Text(
+                              user!.username,
+                              style: TextStyle(fontSize: 12),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 4, top: 4),
+                  child: Row(
+                    children: [
+                      Text(DateTimeFormatter.getRelativeTime(video.createdAt), style: TextStyle(fontSize: 12)),
+                      Text(' • '),
+                      Text('${video.postEngagement.views} Views', style: TextStyle(fontSize: 12)),
+                    ],
+                  ),
                 ),
-              )
-          ],),
-          Container(
-            margin: EdgeInsets.only(bottom: 4, top: 4),
-            child: Row(children: [
-               Text(
-                  DateTimeFormatter.getRelativeTime(video.createdAt),
-                  style: TextStyle(fontSize: 12)
+                Text(
+                  video.body,
+                  style: TextStyle(fontSize: 14),
                 ),
-                Text(' • '),
-              Text('${video.postEngagement.views} Views', style: TextStyle(fontSize: 12)),
-            ],),
+              ],
+            ),
           ),
-          Text(
-            video.body,
-            style: TextStyle(fontSize: 14),
-              ),
-            ],
-          ),
-          ),
-        ], 
+        ],
       ),
     );
   }

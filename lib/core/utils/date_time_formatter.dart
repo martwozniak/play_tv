@@ -19,4 +19,4 @@ class DateTimeFormatter {
       return 'just now';
     }
   }
-} 
+}

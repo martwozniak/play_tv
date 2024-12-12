@@ -58,8 +58,7 @@ mixin _$Video {
 
 /// @nodoc
 abstract class $VideoCopyWith<$Res> {
-  factory $VideoCopyWith(Video value, $Res Function(Video) then) =
-      _$VideoCopyWithImpl<$Res, Video>;
+  factory $VideoCopyWith(Video value, $Res Function(Video) then) = _$VideoCopyWithImpl<$Res, Video>;
   @useResult
   $Res call(
       {dynamic id,
@@ -102,8 +101,7 @@ abstract class $VideoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VideoCopyWithImpl<$Res, $Val extends Video>
-    implements $VideoCopyWith<$Res> {
+class _$VideoCopyWithImpl<$Res, $Val extends Video> implements $VideoCopyWith<$Res> {
   _$VideoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -319,9 +317,7 @@ class _$VideoCopyWithImpl<$Res, $Val extends Video>
 
 /// @nodoc
 abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
-  factory _$$VideoImplCopyWith(
-          _$VideoImpl value, $Res Function(_$VideoImpl) then) =
-      __$$VideoImplCopyWithImpl<$Res>;
+  factory _$$VideoImplCopyWith(_$VideoImpl value, $Res Function(_$VideoImpl) then) = __$$VideoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -368,12 +364,9 @@ abstract class _$$VideoImplCopyWith<$Res> implements $VideoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$VideoImplCopyWithImpl<$Res>
-    extends _$VideoCopyWithImpl<$Res, _$VideoImpl>
+class __$$VideoImplCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res, _$VideoImpl>
     implements _$$VideoImplCopyWith<$Res> {
-  __$$VideoImplCopyWithImpl(
-      _$VideoImpl _value, $Res Function(_$VideoImpl) _then)
-      : super(_value, _then);
+  __$$VideoImplCopyWithImpl(_$VideoImpl _value, $Res Function(_$VideoImpl) _then) : super(_value, _then);
 
   /// Create a copy of Video
   /// with the given fields replaced by the non-null parameter values.
@@ -684,55 +677,38 @@ class _$VideoImpl implements _Video {
             other is _$VideoImpl &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.rootUlid, rootUlid) &&
-            const DeepCollectionEquality()
-                .equals(other.parentUlid, parentUlid) &&
-            const DeepCollectionEquality()
-                .equals(other.grandparentUlid, grandparentUlid) &&
-            (identical(other.isSensitive, isSensitive) ||
-                other.isSensitive == isSensitive) &&
-            (identical(other.isPrivate, isPrivate) ||
-                other.isPrivate == isPrivate) &&
-            (identical(other.commentsEnabled, commentsEnabled) ||
-                other.commentsEnabled == commentsEnabled) &&
-            (identical(other.downloadEnabled, downloadEnabled) ||
-                other.downloadEnabled == downloadEnabled) &&
-            (identical(other.isTrolling, isTrolling) ||
-                other.isTrolling == isTrolling) &&
+            const DeepCollectionEquality().equals(other.parentUlid, parentUlid) &&
+            const DeepCollectionEquality().equals(other.grandparentUlid, grandparentUlid) &&
+            (identical(other.isSensitive, isSensitive) || other.isSensitive == isSensitive) &&
+            (identical(other.isPrivate, isPrivate) || other.isPrivate == isPrivate) &&
+            (identical(other.commentsEnabled, commentsEnabled) || other.commentsEnabled == commentsEnabled) &&
+            (identical(other.downloadEnabled, downloadEnabled) || other.downloadEnabled == downloadEnabled) &&
+            (identical(other.isTrolling, isTrolling) || other.isTrolling == isTrolling) &&
             (identical(other.body, body) || other.body == body) &&
-            const DeepCollectionEquality()
-                .equals(other.detectedLanguage, detectedLanguage) &&
+            const DeepCollectionEquality().equals(other.detectedLanguage, detectedLanguage) &&
             const DeepCollectionEquality().equals(other.username, username) &&
             (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other.postType, postType) &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._videos, _videos) &&
-            const DeepCollectionEquality()
-                .equals(other.videoProcessing, videoProcessing) &&
+            const DeepCollectionEquality().equals(other.videoProcessing, videoProcessing) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             (identical(other.edited, edited) || other.edited == edited) &&
-            const DeepCollectionEquality()
-                .equals(other.userReaction, userReaction) &&
-            (identical(other.isRepost, isRepost) ||
-                other.isRepost == isRepost) &&
+            const DeepCollectionEquality().equals(other.userReaction, userReaction) &&
+            (identical(other.isRepost, isRepost) || other.isRepost == isRepost) &&
             (identical(other.isRepostWithComment, isRepostWithComment) ||
                 other.isRepostWithComment == isRepostWithComment) &&
             const DeepCollectionEquality().equals(other.embedUrl, embedUrl) &&
             const DeepCollectionEquality().equals(other.groupName, groupName) &&
             const DeepCollectionEquality().equals(other.groupId, groupId) &&
             const DeepCollectionEquality().equals(other.support, support) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.isDeleted, isDeleted) ||
-                other.isDeleted == isDeleted) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
+            (identical(other.isDeleted, isDeleted) || other.isDeleted == isDeleted) &&
             const DeepCollectionEquality().equals(other.isHidden, isHidden) &&
-            (identical(other.isProcessing, isProcessing) ||
-                other.isProcessing == isProcessing) &&
-            (identical(other.userEngagement, userEngagement) ||
-                other.userEngagement == userEngagement) &&
-            (identical(other.postEngagement, postEngagement) ||
-                other.postEngagement == postEngagement));
+            (identical(other.isProcessing, isProcessing) || other.isProcessing == isProcessing) &&
+            (identical(other.userEngagement, userEngagement) || other.userEngagement == userEngagement) &&
+            (identical(other.postEngagement, postEngagement) || other.postEngagement == postEngagement));
   }
 
   @override
@@ -778,8 +754,7 @@ class _$VideoImpl implements _Video {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
-      __$$VideoImplCopyWithImpl<_$VideoImpl>(this, _$identity);
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith => __$$VideoImplCopyWithImpl<_$VideoImpl>(this, _$identity);
 }
 
 abstract class _Video implements Video {
@@ -889,8 +864,7 @@ abstract class _Video implements Video {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VideoImplCopyWith<_$VideoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$VideoImplCopyWith<_$VideoImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -908,16 +882,13 @@ mixin _$User {
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call(
-      {dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
+  $Res call({dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
+class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -958,21 +929,15 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
 /// @nodoc
 abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
-      __$$UserImplCopyWithImpl<$Res>;
+  factory _$$UserImplCopyWith(_$UserImpl value, $Res Function(_$UserImpl) then) = __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
+  $Res call({dynamic userId, dynamic avatar, DateTime updatedAt, int updatedAtEpoch});
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
-    implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
-      : super(_value, _then);
+class __$$UserImplCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$UserImpl> implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then) : super(_value, _then);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1008,11 +973,7 @@ class __$$UserImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserImpl implements _User {
-  const _$UserImpl(
-      {required this.userId,
-      required this.avatar,
-      required this.updatedAt,
-      required this.updatedAtEpoch});
+  const _$UserImpl({required this.userId, required this.avatar, required this.updatedAt, required this.updatedAtEpoch});
 
   @override
   final dynamic userId;
@@ -1035,27 +996,20 @@ class _$UserImpl implements _User {
             other is _$UserImpl &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.updatedAtEpoch, updatedAtEpoch) ||
-                other.updatedAtEpoch == updatedAtEpoch));
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
+            (identical(other.updatedAtEpoch, updatedAtEpoch) || other.updatedAtEpoch == updatedAtEpoch));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(userId),
-      const DeepCollectionEquality().hash(avatar),
-      updatedAt,
-      updatedAtEpoch);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(avatar), updatedAt, updatedAtEpoch);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith => __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 }
 
 abstract class _User implements User {
@@ -1078,8 +1032,7 @@ abstract class _User implements User {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1094,8 +1047,7 @@ mixin _$Tag {
 
 /// @nodoc
 abstract class $TagCopyWith<$Res> {
-  factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
-      _$TagCopyWithImpl<$Res, Tag>;
+  factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res, Tag>;
   @useResult
   $Res call({dynamic name});
 }
@@ -1127,18 +1079,15 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
-  factory _$$TagImplCopyWith(_$TagImpl value, $Res Function(_$TagImpl) then) =
-      __$$TagImplCopyWithImpl<$Res>;
+  factory _$$TagImplCopyWith(_$TagImpl value, $Res Function(_$TagImpl) then) = __$$TagImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({dynamic name});
 }
 
 /// @nodoc
-class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
-    implements _$$TagImplCopyWith<$Res> {
-  __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then)
-      : super(_value, _then);
+class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl> implements _$$TagImplCopyWith<$Res> {
+  __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then) : super(_value, _then);
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
@@ -1178,16 +1127,14 @@ class _$TagImpl implements _Tag {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
 
   /// Create a copy of Tag
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TagImplCopyWith<_$TagImpl> get copyWith =>
-      __$$TagImplCopyWithImpl<_$TagImpl>(this, _$identity);
+  _$$TagImplCopyWith<_$TagImpl> get copyWith => __$$TagImplCopyWithImpl<_$TagImpl>(this, _$identity);
 }
 
 abstract class _Tag implements Tag {
@@ -1200,8 +1147,7 @@ abstract class _Tag implements Tag {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TagImplCopyWith<_$TagImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TagImplCopyWith<_$TagImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1213,25 +1159,19 @@ mixin _$UserEngagement {
   /// Create a copy of UserEngagement
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserEngagementCopyWith<UserEngagement> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserEngagementCopyWith<UserEngagement> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserEngagementCopyWith<$Res> {
-  factory $UserEngagementCopyWith(
-          UserEngagement value, $Res Function(UserEngagement) then) =
+  factory $UserEngagementCopyWith(UserEngagement value, $Res Function(UserEngagement) then) =
       _$UserEngagementCopyWithImpl<$Res, UserEngagement>;
   @useResult
-  $Res call(
-      {dynamic hasReposted,
-      dynamic hasRepostedWithComment,
-      dynamic hasCommented});
+  $Res call({dynamic hasReposted, dynamic hasRepostedWithComment, dynamic hasCommented});
 }
 
 /// @nodoc
-class _$UserEngagementCopyWithImpl<$Res, $Val extends UserEngagement>
-    implements $UserEngagementCopyWith<$Res> {
+class _$UserEngagementCopyWithImpl<$Res, $Val extends UserEngagement> implements $UserEngagementCopyWith<$Res> {
   _$UserEngagementCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1266,25 +1206,18 @@ class _$UserEngagementCopyWithImpl<$Res, $Val extends UserEngagement>
 }
 
 /// @nodoc
-abstract class _$$UserEngagementImplCopyWith<$Res>
-    implements $UserEngagementCopyWith<$Res> {
-  factory _$$UserEngagementImplCopyWith(_$UserEngagementImpl value,
-          $Res Function(_$UserEngagementImpl) then) =
+abstract class _$$UserEngagementImplCopyWith<$Res> implements $UserEngagementCopyWith<$Res> {
+  factory _$$UserEngagementImplCopyWith(_$UserEngagementImpl value, $Res Function(_$UserEngagementImpl) then) =
       __$$UserEngagementImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {dynamic hasReposted,
-      dynamic hasRepostedWithComment,
-      dynamic hasCommented});
+  $Res call({dynamic hasReposted, dynamic hasRepostedWithComment, dynamic hasCommented});
 }
 
 /// @nodoc
-class __$$UserEngagementImplCopyWithImpl<$Res>
-    extends _$UserEngagementCopyWithImpl<$Res, _$UserEngagementImpl>
+class __$$UserEngagementImplCopyWithImpl<$Res> extends _$UserEngagementCopyWithImpl<$Res, _$UserEngagementImpl>
     implements _$$UserEngagementImplCopyWith<$Res> {
-  __$$UserEngagementImplCopyWithImpl(
-      _$UserEngagementImpl _value, $Res Function(_$UserEngagementImpl) _then)
+  __$$UserEngagementImplCopyWithImpl(_$UserEngagementImpl _value, $Res Function(_$UserEngagementImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of UserEngagement
@@ -1317,9 +1250,7 @@ class __$$UserEngagementImplCopyWithImpl<$Res>
 
 class _$UserEngagementImpl implements _UserEngagement {
   const _$UserEngagementImpl(
-      {required this.hasReposted,
-      required this.hasRepostedWithComment,
-      required this.hasCommented});
+      {required this.hasReposted, required this.hasRepostedWithComment, required this.hasCommented});
 
   @override
   final dynamic hasReposted;
@@ -1338,20 +1269,14 @@ class _$UserEngagementImpl implements _UserEngagement {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserEngagementImpl &&
-            const DeepCollectionEquality()
-                .equals(other.hasReposted, hasReposted) &&
-            const DeepCollectionEquality()
-                .equals(other.hasRepostedWithComment, hasRepostedWithComment) &&
-            const DeepCollectionEquality()
-                .equals(other.hasCommented, hasCommented));
+            const DeepCollectionEquality().equals(other.hasReposted, hasReposted) &&
+            const DeepCollectionEquality().equals(other.hasRepostedWithComment, hasRepostedWithComment) &&
+            const DeepCollectionEquality().equals(other.hasCommented, hasCommented));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(hasReposted),
-      const DeepCollectionEquality().hash(hasRepostedWithComment),
-      const DeepCollectionEquality().hash(hasCommented));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(hasReposted),
+      const DeepCollectionEquality().hash(hasRepostedWithComment), const DeepCollectionEquality().hash(hasCommented));
 
   /// Create a copy of UserEngagement
   /// with the given fields replaced by the non-null parameter values.
@@ -1359,8 +1284,7 @@ class _$UserEngagementImpl implements _UserEngagement {
   @override
   @pragma('vm:prefer-inline')
   _$$UserEngagementImplCopyWith<_$UserEngagementImpl> get copyWith =>
-      __$$UserEngagementImplCopyWithImpl<_$UserEngagementImpl>(
-          this, _$identity);
+      __$$UserEngagementImplCopyWithImpl<_$UserEngagementImpl>(this, _$identity);
 }
 
 abstract class _UserEngagement implements UserEngagement {
@@ -1380,8 +1304,7 @@ abstract class _UserEngagement implements UserEngagement {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserEngagementImplCopyWith<_$UserEngagementImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserEngagementImplCopyWith<_$UserEngagementImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1394,26 +1317,19 @@ mixin _$PostEngagement {
   /// Create a copy of PostEngagement
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PostEngagementCopyWith<PostEngagement> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PostEngagementCopyWith<PostEngagement> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PostEngagementCopyWith<$Res> {
-  factory $PostEngagementCopyWith(
-          PostEngagement value, $Res Function(PostEngagement) then) =
+  factory $PostEngagementCopyWith(PostEngagement value, $Res Function(PostEngagement) then) =
       _$PostEngagementCopyWithImpl<$Res, PostEngagement>;
   @useResult
-  $Res call(
-      {int totalCommentCount,
-      int commentCount,
-      int views,
-      List<Reaction> reactions});
+  $Res call({int totalCommentCount, int commentCount, int views, List<Reaction> reactions});
 }
 
 /// @nodoc
-class _$PostEngagementCopyWithImpl<$Res, $Val extends PostEngagement>
-    implements $PostEngagementCopyWith<$Res> {
+class _$PostEngagementCopyWithImpl<$Res, $Val extends PostEngagement> implements $PostEngagementCopyWith<$Res> {
   _$PostEngagementCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1453,26 +1369,18 @@ class _$PostEngagementCopyWithImpl<$Res, $Val extends PostEngagement>
 }
 
 /// @nodoc
-abstract class _$$PostEngagementImplCopyWith<$Res>
-    implements $PostEngagementCopyWith<$Res> {
-  factory _$$PostEngagementImplCopyWith(_$PostEngagementImpl value,
-          $Res Function(_$PostEngagementImpl) then) =
+abstract class _$$PostEngagementImplCopyWith<$Res> implements $PostEngagementCopyWith<$Res> {
+  factory _$$PostEngagementImplCopyWith(_$PostEngagementImpl value, $Res Function(_$PostEngagementImpl) then) =
       __$$PostEngagementImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int totalCommentCount,
-      int commentCount,
-      int views,
-      List<Reaction> reactions});
+  $Res call({int totalCommentCount, int commentCount, int views, List<Reaction> reactions});
 }
 
 /// @nodoc
-class __$$PostEngagementImplCopyWithImpl<$Res>
-    extends _$PostEngagementCopyWithImpl<$Res, _$PostEngagementImpl>
+class __$$PostEngagementImplCopyWithImpl<$Res> extends _$PostEngagementCopyWithImpl<$Res, _$PostEngagementImpl>
     implements _$$PostEngagementImplCopyWith<$Res> {
-  __$$PostEngagementImplCopyWithImpl(
-      _$PostEngagementImpl _value, $Res Function(_$PostEngagementImpl) _then)
+  __$$PostEngagementImplCopyWithImpl(_$PostEngagementImpl _value, $Res Function(_$PostEngagementImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of PostEngagement
@@ -1540,18 +1448,15 @@ class _$PostEngagementImpl implements _PostEngagement {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PostEngagementImpl &&
-            (identical(other.totalCommentCount, totalCommentCount) ||
-                other.totalCommentCount == totalCommentCount) &&
-            (identical(other.commentCount, commentCount) ||
-                other.commentCount == commentCount) &&
+            (identical(other.totalCommentCount, totalCommentCount) || other.totalCommentCount == totalCommentCount) &&
+            (identical(other.commentCount, commentCount) || other.commentCount == commentCount) &&
             (identical(other.views, views) || other.views == views) &&
-            const DeepCollectionEquality()
-                .equals(other._reactions, _reactions));
+            const DeepCollectionEquality().equals(other._reactions, _reactions));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, totalCommentCount, commentCount,
-      views, const DeepCollectionEquality().hash(_reactions));
+  int get hashCode =>
+      Object.hash(runtimeType, totalCommentCount, commentCount, views, const DeepCollectionEquality().hash(_reactions));
 
   /// Create a copy of PostEngagement
   /// with the given fields replaced by the non-null parameter values.
@@ -1559,8 +1464,7 @@ class _$PostEngagementImpl implements _PostEngagement {
   @override
   @pragma('vm:prefer-inline')
   _$$PostEngagementImplCopyWith<_$PostEngagementImpl> get copyWith =>
-      __$$PostEngagementImplCopyWithImpl<_$PostEngagementImpl>(
-          this, _$identity);
+      __$$PostEngagementImplCopyWithImpl<_$PostEngagementImpl>(this, _$identity);
 }
 
 abstract class _PostEngagement implements PostEngagement {
@@ -1583,8 +1487,7 @@ abstract class _PostEngagement implements PostEngagement {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PostEngagementImplCopyWith<_$PostEngagementImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PostEngagementImplCopyWith<_$PostEngagementImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1595,21 +1498,18 @@ mixin _$Reaction {
   /// Create a copy of Reaction
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ReactionCopyWith<Reaction> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ReactionCopyWith<Reaction> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReactionCopyWith<$Res> {
-  factory $ReactionCopyWith(Reaction value, $Res Function(Reaction) then) =
-      _$ReactionCopyWithImpl<$Res, Reaction>;
+  factory $ReactionCopyWith(Reaction value, $Res Function(Reaction) then) = _$ReactionCopyWithImpl<$Res, Reaction>;
   @useResult
   $Res call({String name, int count});
 }
 
 /// @nodoc
-class _$ReactionCopyWithImpl<$Res, $Val extends Reaction>
-    implements $ReactionCopyWith<$Res> {
+class _$ReactionCopyWithImpl<$Res, $Val extends Reaction> implements $ReactionCopyWith<$Res> {
   _$ReactionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1639,10 +1539,8 @@ class _$ReactionCopyWithImpl<$Res, $Val extends Reaction>
 }
 
 /// @nodoc
-abstract class _$$ReactionImplCopyWith<$Res>
-    implements $ReactionCopyWith<$Res> {
-  factory _$$ReactionImplCopyWith(
-          _$ReactionImpl value, $Res Function(_$ReactionImpl) then) =
+abstract class _$$ReactionImplCopyWith<$Res> implements $ReactionCopyWith<$Res> {
+  factory _$$ReactionImplCopyWith(_$ReactionImpl value, $Res Function(_$ReactionImpl) then) =
       __$$ReactionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1650,12 +1548,9 @@ abstract class _$$ReactionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReactionImplCopyWithImpl<$Res>
-    extends _$ReactionCopyWithImpl<$Res, _$ReactionImpl>
+class __$$ReactionImplCopyWithImpl<$Res> extends _$ReactionCopyWithImpl<$Res, _$ReactionImpl>
     implements _$$ReactionImplCopyWith<$Res> {
-  __$$ReactionImplCopyWithImpl(
-      _$ReactionImpl _value, $Res Function(_$ReactionImpl) _then)
-      : super(_value, _then);
+  __$$ReactionImplCopyWithImpl(_$ReactionImpl _value, $Res Function(_$ReactionImpl) _then) : super(_value, _then);
 
   /// Create a copy of Reaction
   /// with the given fields replaced by the non-null parameter values.
@@ -1715,8 +1610,7 @@ class _$ReactionImpl implements _Reaction {
 }
 
 abstract class _Reaction implements Reaction {
-  const factory _Reaction(
-      {required final String name, required final int count}) = _$ReactionImpl;
+  const factory _Reaction({required final String name, required final int count}) = _$ReactionImpl;
 
   @override
   String get name;
@@ -1727,8 +1621,7 @@ abstract class _Reaction implements Reaction {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReactionImplCopyWith<_$ReactionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReactionImplCopyWith<_$ReactionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1744,14 +1637,12 @@ mixin _$SingleVideo {
   /// Create a copy of SingleVideo
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SingleVideoCopyWith<SingleVideo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SingleVideoCopyWith<SingleVideo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SingleVideoCopyWith<$Res> {
-  factory $SingleVideoCopyWith(
-          SingleVideo value, $Res Function(SingleVideo) then) =
+  factory $SingleVideoCopyWith(SingleVideo value, $Res Function(SingleVideo) then) =
       _$SingleVideoCopyWithImpl<$Res, SingleVideo>;
   @useResult
   $Res call(
@@ -1767,8 +1658,7 @@ abstract class $SingleVideoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SingleVideoCopyWithImpl<$Res, $Val extends SingleVideo>
-    implements $SingleVideoCopyWith<$Res> {
+class _$SingleVideoCopyWithImpl<$Res, $Val extends SingleVideo> implements $SingleVideoCopyWith<$Res> {
   _$SingleVideoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1833,10 +1723,8 @@ class _$SingleVideoCopyWithImpl<$Res, $Val extends SingleVideo>
 }
 
 /// @nodoc
-abstract class _$$SingleVideoImplCopyWith<$Res>
-    implements $SingleVideoCopyWith<$Res> {
-  factory _$$SingleVideoImplCopyWith(
-          _$SingleVideoImpl value, $Res Function(_$SingleVideoImpl) then) =
+abstract class _$$SingleVideoImplCopyWith<$Res> implements $SingleVideoCopyWith<$Res> {
+  factory _$$SingleVideoImplCopyWith(_$SingleVideoImpl value, $Res Function(_$SingleVideoImpl) then) =
       __$$SingleVideoImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1854,11 +1742,9 @@ abstract class _$$SingleVideoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SingleVideoImplCopyWithImpl<$Res>
-    extends _$SingleVideoCopyWithImpl<$Res, _$SingleVideoImpl>
+class __$$SingleVideoImplCopyWithImpl<$Res> extends _$SingleVideoCopyWithImpl<$Res, _$SingleVideoImpl>
     implements _$$SingleVideoImplCopyWith<$Res> {
-  __$$SingleVideoImplCopyWithImpl(
-      _$SingleVideoImpl _value, $Res Function(_$SingleVideoImpl) _then)
+  __$$SingleVideoImplCopyWithImpl(_$SingleVideoImpl _value, $Res Function(_$SingleVideoImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of SingleVideo
@@ -1946,27 +1832,16 @@ class _$SingleVideoImpl implements _SingleVideo {
             other is _$SingleVideoImpl &&
             const DeepCollectionEquality().equals(other.url, url) &&
             (identical(other.widthPx, widthPx) || other.widthPx == widthPx) &&
-            (identical(other.heightPx, heightPx) ||
-                other.heightPx == heightPx) &&
+            (identical(other.heightPx, heightPx) || other.heightPx == heightPx) &&
             const DeepCollectionEquality().equals(other.mimeType, mimeType) &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
-            (identical(other.lastPosition, lastPosition) ||
-                other.lastPosition == lastPosition) &&
-            (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+            (identical(other.duration, duration) || other.duration == duration) &&
+            (identical(other.lastPosition, lastPosition) || other.lastPosition == lastPosition) &&
+            (identical(other.thumbnail, thumbnail) || other.thumbnail == thumbnail));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(url),
-      widthPx,
-      heightPx,
-      const DeepCollectionEquality().hash(mimeType),
-      duration,
-      lastPosition,
-      thumbnail);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(url), widthPx, heightPx,
+      const DeepCollectionEquality().hash(mimeType), duration, lastPosition, thumbnail);
 
   /// Create a copy of SingleVideo
   /// with the given fields replaced by the non-null parameter values.
@@ -2006,8 +1881,7 @@ abstract class _SingleVideo implements SingleVideo {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SingleVideoImplCopyWith<_$SingleVideoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SingleVideoImplCopyWith<_$SingleVideoImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2020,22 +1894,19 @@ mixin _$VideoThumbnail {
   /// Create a copy of VideoThumbnail
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $VideoThumbnailCopyWith<VideoThumbnail> get copyWith =>
-      throw _privateConstructorUsedError;
+  $VideoThumbnailCopyWith<VideoThumbnail> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $VideoThumbnailCopyWith<$Res> {
-  factory $VideoThumbnailCopyWith(
-          VideoThumbnail value, $Res Function(VideoThumbnail) then) =
+  factory $VideoThumbnailCopyWith(VideoThumbnail value, $Res Function(VideoThumbnail) then) =
       _$VideoThumbnailCopyWithImpl<$Res, VideoThumbnail>;
   @useResult
   $Res call({String url, int? widthPx, int? heightPx, dynamic mimeType});
 }
 
 /// @nodoc
-class _$VideoThumbnailCopyWithImpl<$Res, $Val extends VideoThumbnail>
-    implements $VideoThumbnailCopyWith<$Res> {
+class _$VideoThumbnailCopyWithImpl<$Res, $Val extends VideoThumbnail> implements $VideoThumbnailCopyWith<$Res> {
   _$VideoThumbnailCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2075,10 +1946,8 @@ class _$VideoThumbnailCopyWithImpl<$Res, $Val extends VideoThumbnail>
 }
 
 /// @nodoc
-abstract class _$$VideoThumbnailImplCopyWith<$Res>
-    implements $VideoThumbnailCopyWith<$Res> {
-  factory _$$VideoThumbnailImplCopyWith(_$VideoThumbnailImpl value,
-          $Res Function(_$VideoThumbnailImpl) then) =
+abstract class _$$VideoThumbnailImplCopyWith<$Res> implements $VideoThumbnailCopyWith<$Res> {
+  factory _$$VideoThumbnailImplCopyWith(_$VideoThumbnailImpl value, $Res Function(_$VideoThumbnailImpl) then) =
       __$$VideoThumbnailImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2086,11 +1955,9 @@ abstract class _$$VideoThumbnailImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$VideoThumbnailImplCopyWithImpl<$Res>
-    extends _$VideoThumbnailCopyWithImpl<$Res, _$VideoThumbnailImpl>
+class __$$VideoThumbnailImplCopyWithImpl<$Res> extends _$VideoThumbnailCopyWithImpl<$Res, _$VideoThumbnailImpl>
     implements _$$VideoThumbnailImplCopyWith<$Res> {
-  __$$VideoThumbnailImplCopyWithImpl(
-      _$VideoThumbnailImpl _value, $Res Function(_$VideoThumbnailImpl) _then)
+  __$$VideoThumbnailImplCopyWithImpl(_$VideoThumbnailImpl _value, $Res Function(_$VideoThumbnailImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of VideoThumbnail
@@ -2128,10 +1995,7 @@ class __$$VideoThumbnailImplCopyWithImpl<$Res>
 
 class _$VideoThumbnailImpl implements _VideoThumbnail {
   const _$VideoThumbnailImpl(
-      {required this.url,
-      required this.widthPx,
-      required this.heightPx,
-      required this.mimeType});
+      {required this.url, required this.widthPx, required this.heightPx, required this.mimeType});
 
   @override
   final String url;
@@ -2154,14 +2018,12 @@ class _$VideoThumbnailImpl implements _VideoThumbnail {
             other is _$VideoThumbnailImpl &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.widthPx, widthPx) || other.widthPx == widthPx) &&
-            (identical(other.heightPx, heightPx) ||
-                other.heightPx == heightPx) &&
+            (identical(other.heightPx, heightPx) || other.heightPx == heightPx) &&
             const DeepCollectionEquality().equals(other.mimeType, mimeType));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url, widthPx, heightPx,
-      const DeepCollectionEquality().hash(mimeType));
+  int get hashCode => Object.hash(runtimeType, url, widthPx, heightPx, const DeepCollectionEquality().hash(mimeType));
 
   /// Create a copy of VideoThumbnail
   /// with the given fields replaced by the non-null parameter values.
@@ -2169,8 +2031,7 @@ class _$VideoThumbnailImpl implements _VideoThumbnail {
   @override
   @pragma('vm:prefer-inline')
   _$$VideoThumbnailImplCopyWith<_$VideoThumbnailImpl> get copyWith =>
-      __$$VideoThumbnailImplCopyWithImpl<_$VideoThumbnailImpl>(
-          this, _$identity);
+      __$$VideoThumbnailImplCopyWithImpl<_$VideoThumbnailImpl>(this, _$identity);
 }
 
 abstract class _VideoThumbnail implements VideoThumbnail {
@@ -2193,6 +2054,5 @@ abstract class _VideoThumbnail implements VideoThumbnail {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VideoThumbnailImplCopyWith<_$VideoThumbnailImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$VideoThumbnailImplCopyWith<_$VideoThumbnailImpl> get copyWith => throw _privateConstructorUsedError;
 }

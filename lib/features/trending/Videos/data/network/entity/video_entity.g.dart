@@ -7,18 +7,14 @@ part of 'video_entity.dart';
 // **************************************************************************
 
 VideoEntity _$VideoEntityFromJson(Map<String, dynamic> json) => VideoEntity(
-      data: (json['data'] as List<dynamic>)
-          .map((e) => SingleVideoEntity.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      data: (json['data'] as List<dynamic>).map((e) => SingleVideoEntity.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
-Map<String, dynamic> _$VideoEntityToJson(VideoEntity instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$VideoEntityToJson(VideoEntity instance) => <String, dynamic>{
       'data': instance.data,
     };
 
-SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
-    SingleVideoEntity(
+SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) => SingleVideoEntity(
       id: json['id'] as String,
       rootUlid: json['rootUlid'],
       parentUlid: json['parentUlid'],
@@ -31,18 +27,12 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       body: json['body'] as String?,
       detectedLanguage: json['detectedLanguage'] as String?,
       username: json['username'] as String?,
-      user: json['user'] == null
-          ? null
-          : User.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] == null ? null : User.fromJson(json['user'] as Map<String, dynamic>),
       postType: json['postType'],
       title: json['title'] as String?,
-      videos: (json['videos'] as List<dynamic>?)
-          ?.map((e) => SingleVideo.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      videos: (json['videos'] as List<dynamic>?)?.map((e) => SingleVideo.fromJson(e as Map<String, dynamic>)).toList(),
       videoProcessing: json['videoProcessing'],
-      tags: (json['tags'] as List<dynamic>?)
-          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      tags: (json['tags'] as List<dynamic>?)?.map((e) => Tag.fromJson(e as Map<String, dynamic>)).toList(),
       edited: json['edited'] as bool?,
       userReaction: json['userReaction'],
       isRepost: json['isRepost'] as bool?,
@@ -58,16 +48,13 @@ SingleVideoEntity _$SingleVideoEntityFromJson(Map<String, dynamic> json) =>
       isProcessing: json['isProcessing'] as bool,
       userEngagement: json['userEngagement'] == null
           ? null
-          : UserEngagement.fromJson(
-              json['userEngagement'] as Map<String, dynamic>),
+          : UserEngagement.fromJson(json['userEngagement'] as Map<String, dynamic>),
       postEngagement: json['postEngagement'] == null
           ? null
-          : PostEngagement.fromJson(
-              json['postEngagement'] as Map<String, dynamic>),
+          : PostEngagement.fromJson(json['postEngagement'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) => <String, dynamic>{
       'id': instance.id,
       'rootUlid': instance.rootUlid,
       'parentUlid': instance.parentUlid,
@@ -103,18 +90,14 @@ Map<String, dynamic> _$SingleVideoEntityToJson(SingleVideoEntity instance) =>
       'postEngagement': instance.postEngagement,
     };
 
-PostEngagement _$PostEngagementFromJson(Map<String, dynamic> json) =>
-    PostEngagement(
+PostEngagement _$PostEngagementFromJson(Map<String, dynamic> json) => PostEngagement(
       totalCommentCount: (json['totalCommentCount'] as num).toInt(),
       commentCount: (json['commentCount'] as num).toInt(),
       views: (json['views'] as num).toInt(),
-      reactions: (json['reactions'] as List<dynamic>)
-          .map((e) => Reaction.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      reactions: (json['reactions'] as List<dynamic>).map((e) => Reaction.fromJson(e as Map<String, dynamic>)).toList(),
     );
 
-Map<String, dynamic> _$PostEngagementToJson(PostEngagement instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PostEngagementToJson(PostEngagement instance) => <String, dynamic>{
       'totalCommentCount': instance.totalCommentCount,
       'commentCount': instance.commentCount,
       'views': instance.views,
@@ -153,23 +136,19 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'updatedAtEpoch': instance.updatedAtEpoch,
     };
 
-UserEngagement _$UserEngagementFromJson(Map<String, dynamic> json) =>
-    UserEngagement(
+UserEngagement _$UserEngagementFromJson(Map<String, dynamic> json) => UserEngagement(
       hasReposted: json['hasReposted'],
       hasRepostedWithComment: json['hasRepostedWithComment'],
       hasCommented: json['hasCommented'],
     );
 
-Map<String, dynamic> _$UserEngagementToJson(UserEngagement instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserEngagementToJson(UserEngagement instance) => <String, dynamic>{
       'hasReposted': instance.hasReposted,
       'hasRepostedWithComment': instance.hasRepostedWithComment,
       'hasCommented': instance.hasCommented,
     };
 
-VideoProcessingClass _$VideoProcessingClassFromJson(
-        Map<String, dynamic> json) =>
-    VideoProcessingClass(
+VideoProcessingClass _$VideoProcessingClassFromJson(Map<String, dynamic> json) => VideoProcessingClass(
       id: json['id'] as String,
       tmpUrl: json['tmpUrl'] as String,
       video: VideoClass.fromJson(json['video'] as Map<String, dynamic>),
@@ -179,9 +158,7 @@ VideoProcessingClass _$VideoProcessingClassFromJson(
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 
-Map<String, dynamic> _$VideoProcessingClassToJson(
-        VideoProcessingClass instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$VideoProcessingClassToJson(VideoProcessingClass instance) => <String, dynamic>{
       'id': instance.id,
       'tmpUrl': instance.tmpUrl,
       'video': instance.video,
@@ -199,8 +176,7 @@ VideoClass _$VideoClassFromJson(Map<String, dynamic> json) => VideoClass(
       duration: json['duration'],
     );
 
-Map<String, dynamic> _$VideoClassToJson(VideoClass instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$VideoClassToJson(VideoClass instance) => <String, dynamic>{
       'url': instance.url,
       'widthPx': instance.widthPx,
       'heightPx': instance.heightPx,
@@ -215,12 +191,10 @@ SingleVideo _$SingleVideoFromJson(Map<String, dynamic> json) => SingleVideo(
       mimeType: $enumDecode(_$PurpleMimeTypeEnumMap, json['mimeType']),
       duration: (json['duration'] as num).toInt(),
       lastPosition: (json['lastPosition'] as num?)?.toInt(),
-      thumbnail:
-          VideoThumbnail.fromJson(json['thumbnail'] as Map<String, dynamic>),
+      thumbnail: VideoThumbnail.fromJson(json['thumbnail'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SingleVideoToJson(SingleVideo instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SingleVideoToJson(SingleVideo instance) => <String, dynamic>{
       'url': instance.url,
       'widthPx': instance.widthPx,
       'heightPx': instance.heightPx,
@@ -234,8 +208,7 @@ const _$PurpleMimeTypeEnumMap = {
   PurpleMimeType.VIDEO_MP4: 'VIDEO_MP4',
 };
 
-VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) =>
-    VideoThumbnail(
+VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) => VideoThumbnail(
       url: json['url'] as String,
       m3U8Name: json['m3U8Name'] as String,
       dashName: json['dashName'] as String,
@@ -244,8 +217,7 @@ VideoThumbnail _$VideoThumbnailFromJson(Map<String, dynamic> json) =>
       mimeType: json['mimeType'],
     );
 
-Map<String, dynamic> _$VideoThumbnailToJson(VideoThumbnail instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$VideoThumbnailToJson(VideoThumbnail instance) => <String, dynamic>{
       'url': instance.url,
       'm3U8Name': instance.m3U8Name,
       'dashName': instance.dashName,

@@ -44,10 +44,8 @@ class NetworkMapper {
     return trendingVideosList;
   }
 
-
   Video toVideo(entity.SingleVideoEntity singleVideoEntity) {
     try {
-      
       return Video(
         id: singleVideoEntity.id,
         rootUlid: singleVideoEntity.rootUlid?.toString() ?? '',
@@ -69,20 +67,22 @@ class NetworkMapper {
         ),
         postType: singleVideoEntity.postType ?? '',
         title: singleVideoEntity.title ?? '',
-        videos: singleVideoEntity.videos.map((video) => SingleVideo(
-          url: video.url,
-          widthPx: video.widthPx,
-          heightPx: video.heightPx,
-          mimeType: video.mimeType,
-          duration: video.duration,
-          lastPosition: video.lastPosition,
-          thumbnail: VideoThumbnail(
-            url: video.thumbnail.url,
-            widthPx: video.thumbnail.widthPx,
-            heightPx: video.thumbnail.heightPx,
-            mimeType: video.thumbnail.mimeType,
-          ),
-        )).toList(),
+        videos: singleVideoEntity.videos
+            .map((video) => SingleVideo(
+                  url: video.url,
+                  widthPx: video.widthPx,
+                  heightPx: video.heightPx,
+                  mimeType: video.mimeType,
+                  duration: video.duration,
+                  lastPosition: video.lastPosition,
+                  thumbnail: VideoThumbnail(
+                    url: video.thumbnail.url,
+                    widthPx: video.thumbnail.widthPx,
+                    heightPx: video.thumbnail.heightPx,
+                    mimeType: video.thumbnail.mimeType,
+                  ),
+                ))
+            .toList(),
         videoProcessing: singleVideoEntity.videoProcessing,
         tags: singleVideoEntity.tags.map((tag) => Tag(name: tag.name ?? '')).toList(),
         edited: singleVideoEntity.edited,
@@ -94,7 +94,9 @@ class NetworkMapper {
           totalCommentCount: singleVideoEntity.postEngagement.totalCommentCount,
           commentCount: singleVideoEntity.postEngagement.commentCount,
           views: singleVideoEntity.postEngagement.views,
-          reactions: singleVideoEntity.postEngagement.reactions.map((reaction) => Reaction(name: reaction.name ?? '', count: reaction.count)).toList(),
+          reactions: singleVideoEntity.postEngagement.reactions
+              .map((reaction) => Reaction(name: reaction.name ?? '', count: reaction.count))
+              .toList(),
         ),
         userEngagement: UserEngagement(
           hasReposted: singleVideoEntity.userEngagement.hasReposted,
@@ -132,7 +134,6 @@ class NetworkMapper {
     }
     return videoList;
   }
-
 
   user.User toUser(u.User userEntity) {
     try {

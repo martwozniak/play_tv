@@ -25,18 +25,14 @@ class TrendingVideosRepository {
     return await apiClient.getTrendingVideos();
   }
 
-  Future<List<video.Video>> mapToTrendingVideos(
-    TrendingVideosEntity trendingVideosEntity
-  ) async {
+  Future<List<video.Video>> mapToTrendingVideos(TrendingVideosEntity trendingVideosEntity) async {
     final videoEntities = await apiClient.mapToTrendingVideos(trendingVideosEntity);
     inspect(videoEntities);
 
     return networkMapper.toVideos([videoEntities]);
   }
 
-    Future<List<video.Video>> mapToTrendingVideosFuture(
-    Future<TrendingVideosEntity> trendingVideosEntity
-  ) async {
+  Future<List<video.Video>> mapToTrendingVideosFuture(Future<TrendingVideosEntity> trendingVideosEntity) async {
     final trending = await trendingVideosEntity;
     final videoEntities = await apiClient.mapToTrendingVideos(trending);
     print('videoEntities');
@@ -50,4 +46,3 @@ class TrendingVideosRepository {
     return networkMapper.toUser(userEntity.data[0]);
   }
 }
-

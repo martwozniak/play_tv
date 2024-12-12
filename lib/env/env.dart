@@ -28,6 +28,5 @@ abstract class Env {
   static const String bitmovinPlayerLicenseKey = _Env.bitmovinPlayerLicenseKey;
 
   @EnviedField(varName: 'BITMOVIN_ANALYTICS_LICENSE_KEY', defaultValue: _unset)
-  static String? bitmovinAnalyticsLicenseKey =
-      _getOptionalValue(_Env.bitmovinAnalyticsLicenseKey);
+  static String? bitmovinAnalyticsLicenseKey = _getOptionalValue(_Env.bitmovinAnalyticsLicenseKey);
 }

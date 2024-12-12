@@ -11,7 +11,10 @@ class ApiClient {
   }) {
     _dio = Dio(BaseOptions(
       baseUrl: baseUrl,
-    ))..interceptors.add(LogInterceptor(requestBody: true, responseBody: true),);
+    ))
+      ..interceptors.add(
+        LogInterceptor(requestBody: true, responseBody: true),
+      );
   }
 
   Future<TrendingVideosEntity> getTrendingVideos() async {
@@ -34,11 +37,8 @@ class ApiClient {
     // final videoIds = trendingVideosEntity.map((video) => video.ulids).toList();
     // trendingVideosEntity.ulids
     final response = await _dio.post(
-      'posts/map', 
-      data: {
-        "data": trendingVideosEntity.ulids,
-        "responseType": "videos"
-      },
+      'posts/map',
+      data: {"data": trendingVideosEntity.ulids, "responseType": "videos"},
     );
 
     if (response.statusCode == 200) {
@@ -54,16 +54,16 @@ class ApiClient {
 
   Future<u.UserEntity> getUser(String ulid) async {
     final response = await _dio.post(
-      'profile', 
+      'profile',
       data: {
         "ulids": [ulid],
       },
     );
-    
+
     if (response.statusCode != null && response.statusCode! >= 400) {
       throw Exception('Failed to get user profile');
-    } 
-    
+    }
+
     try {
       if (response.statusCode == 200 && response.data is List) {
         final userDataList = response.data as List;
@@ -80,4 +80,3 @@ class ApiClient {
     }
   }
 }
-

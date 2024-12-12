@@ -17,7 +17,7 @@ class MoviesList extends StatefulWidget {
 class _MoviesListState extends State<MoviesList> {
   late Future<TrendingVideosEntity> _trendingVideosFuture;
   late Future<List<video.Video>> _mapToTrendingVideosFuture;
-  
+
   @override
   void initState() {
     super.initState();
@@ -67,7 +67,7 @@ class _MoviesListState extends State<MoviesList> {
                     final userData = userSnapshot.hasData ? userSnapshot.data : null;
                     final avatarUrl = userData?.avatar ?? video.user.avatar as String;
                     final username = userData?.name ?? video.username;
-                    
+
                     return ListTile(
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,23 +126,18 @@ class _MoviesListState extends State<MoviesList> {
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                       ),
-                          
-                                      // username
                                       Text(
                                         username.toString(),
                                         style: TextStyle(fontSize: 12),
                                       ),
-                                      // Only show followers if we have valid user data
-                                    Row(
-                                      children: [
-                                        Text(
-                                          DateTimeFormatter.getRelativeTime(video.createdAt),
-                                          style: TextStyle(fontSize: 12)
-                                        ),
-                                        Text(' • '),
-                                        Text('${video.postEngagement.views} views', style: TextStyle(fontSize: 12)),
-                                      ],
-                                    ),
+                                      Row(
+                                        children: [
+                                          Text(DateTimeFormatter.getRelativeTime(video.createdAt),
+                                              style: TextStyle(fontSize: 12)),
+                                          Text(' • '),
+                                          Text('${video.postEngagement.views} views', style: TextStyle(fontSize: 12)),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 )

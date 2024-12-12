@@ -46,10 +46,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MoviesList(),
-        '/details': (context) {
-          final movie = ModalRoute.of(context)!.settings.arguments as Video;
-          return MovieDetailScreen(movie: movie);
-        },
       },
     );
   }

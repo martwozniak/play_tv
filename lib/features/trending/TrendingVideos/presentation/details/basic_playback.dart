@@ -1,6 +1,5 @@
 import 'package:bitmovin_player/bitmovin_player.dart';
 import 'package:flutter/material.dart';
-import 'package:play_tv/features/trending/TrendingVideos/presentation/player/controls.dart';
 import 'package:play_tv/env/env.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
 import 'package:play_tv/features/trending/TrendingVideos/presentation/player/platform.dart';
@@ -54,25 +53,11 @@ class _BasicPlaybackState extends State<BasicPlayback> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Basic Playback'),
+        title: const Text('Video'),
       ),
       body: ListView(
         children: [
           PlayerViewContainer(player: _player),
-          // Container(
-          //   margin: const EdgeInsets.only(top: 5),
-          //   child: Controls(
-          //     onLoadPressed: () => _player.loadSourceConfig(_sourceConfig),
-          //     onPlayPressed: _player.play,
-          //     onPausePressed: _player.pause,
-          //     onMutePressed: _player.mute,
-          //     onUnmutePressed: _player.unmute,
-          //     onSkipForwardPressed: () async =>
-          //         _player.seek(await _player.currentTime + 10),
-          //     onSkipBackwardPressed: () async =>
-          //         _player.seek(await _player.currentTime - 10),
-          //   ),
-          // ),
           Container(
             margin: const EdgeInsets.all(8),
             child: Column(

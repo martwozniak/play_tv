@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart'
+    as video;
 import 'package:play_tv/features/trending/TrendingVideos/presentation/details/basic_playback.dart';
 import 'package:provider/provider.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart'
+    as user;
 import 'package:play_tv/core/utils/date_time_formatter.dart';
 
 class MoviesList extends StatefulWidget {
@@ -21,11 +23,13 @@ class _MoviesListState extends State<MoviesList> {
   @override
   void initState() {
     super.initState();
-    final repository = Provider.of<TrendingVideosRepository>(context, listen: false);
+    final repository =
+        Provider.of<TrendingVideosRepository>(context, listen: false);
     _trendingVideosFuture = repository.getTrendingVideosEntity().then((value) {
       return value;
     });
-    _mapToTrendingVideosFuture = repository.mapToTrendingVideosFuture(_trendingVideosFuture);
+    _mapToTrendingVideosFuture =
+        repository.mapToTrendingVideosFuture(_trendingVideosFuture);
   }
 
   // Helper method to format duration
@@ -61,14 +65,18 @@ class _MoviesListState extends State<MoviesList> {
               itemBuilder: (context, index) {
                 final video = trendingVideos[index];
                 return FutureBuilder<user.User>(
-                  future: Provider.of<TrendingVideosRepository>(context, listen: false)
+                  future: Provider.of<TrendingVideosRepository>(context,
+                          listen: false)
                       .getUser(video.user.userId as String),
                   builder: (context, userSnapshot) {
-                    final userData = userSnapshot.hasData ? userSnapshot.data : null;
-                    final avatarUrl = userData?.avatar ?? video.user.avatar as String;
+                    final userData =
+                        userSnapshot.hasData ? userSnapshot.data : null;
+                    final avatarUrl =
+                        userData?.avatar ?? video.user.avatar as String;
                     final username = userData?.name ?? video.username;
 
                     return ListTile(
+                      contentPadding: EdgeInsets.zero,
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -88,10 +96,12 @@ class _MoviesListState extends State<MoviesList> {
                                 bottom: 8,
                                 child: Container(
                                   color: Colors.black54,
-                                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 4, vertical: 2),
                                   child: Text(
                                     '${_formatDuration(video.videos[0].duration)}',
-                                    style: TextStyle(color: Colors.white, fontSize: 12),
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
                                   ),
                                 ),
                               ),
@@ -99,6 +109,7 @@ class _MoviesListState extends State<MoviesList> {
                           ),
                           Container(
                             margin: EdgeInsets.only(top: 8),
+                            padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -108,8 +119,10 @@ class _MoviesListState extends State<MoviesList> {
                                       backgroundImage: NetworkImage(avatarUrl),
                                       radius: 20,
                                       // Add error handling for avatar image
-                                      onBackgroundImageError: (exception, stackTrace) {
-                                        print('Error loading avatar: $exception');
+                                      onBackgroundImageError:
+                                          (exception, stackTrace) {
+                                        print(
+                                            'Error loading avatar: $exception');
                                       },
                                     ),
                                     const SizedBox(height: 4),
@@ -118,11 +131,13 @@ class _MoviesListState extends State<MoviesList> {
                                 const SizedBox(width: 8),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         video.title,
-                                        style: const TextStyle(fontWeight: FontWeight.bold),
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold),
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                       ),
@@ -132,10 +147,14 @@ class _MoviesListState extends State<MoviesList> {
                                       ),
                                       Row(
                                         children: [
-                                          Text(DateTimeFormatter.getRelativeTime(video.createdAt),
+                                          Text(
+                                              DateTimeFormatter.getRelativeTime(
+                                                  video.createdAt),
                                               style: TextStyle(fontSize: 12)),
                                           Text(' • '),
-                                          Text('${video.postEngagement.views} views', style: TextStyle(fontSize: 12)),
+                                          Text(
+                                              '${video.postEngagement.views} views',
+                                              style: TextStyle(fontSize: 12)),
                                         ],
                                       ),
                                     ],
@@ -150,7 +169,8 @@ class _MoviesListState extends State<MoviesList> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BasicPlayback(video: video, user: userData),
+                            builder: (context) =>
+                                BasicPlayback(video: video, user: userData),
                           ),
                         );
                       },

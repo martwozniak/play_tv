@@ -17,8 +17,7 @@ class DependencyInjection {
     return [
       Provider<ApiClient>(create: (_) => apiClient),
       Provider<NetworkMapper>(create: (_) => networkMapper),
-      Provider<TrendingVideosRepository>(
-          create: (_) => trendingVideosRepository),
+      Provider<TrendingVideosRepository>(create: (_) => trendingVideosRepository),
     ];
   }
 }

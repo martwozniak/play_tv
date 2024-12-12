@@ -44,10 +44,10 @@ class TrendingVideosRepository {
     return networkMapper.toVideos([videoEntities]);
   }
 
-  Future<List<user.User>> getUser(String ulid) async {
+  Future<user.User> getUser(String ulid) async {
     final userEntity = await apiClient.getUser(ulid);
     inspect(userEntity);
-    return networkMapper.toUsers(userEntity.data);
+    return networkMapper.toUser(userEntity.data[0]);
   }
 }
 

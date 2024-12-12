@@ -6,6 +6,7 @@ import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart
 import 'package:play_tv/features/trending/TrendingVideos/presentation/details/basic_playback.dart';
 import 'package:play_tv/features/trending/TrendingVideos/presentation/details/movie_detail_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
 
 class MoviesList extends StatefulWidget {
   const MoviesList({super.key});
@@ -60,75 +61,105 @@ class _MoviesListState extends State<MoviesList> {
               itemCount: trendingVideos.length,
               itemBuilder: (context, index) {
                 final video = trendingVideos[index];
-                return ListTile(
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 8),
-                      Stack(
+                return FutureBuilder<user.User>(
+                  future: Provider.of<TrendingVideosRepository>(context, listen: false)
+                      .getUser(video.user.userId as String),
+                  builder: (context, userSnapshot) {
+                    final userData = userSnapshot.hasData ? userSnapshot.data : null;
+                    final avatarUrl = userData?.avatar ?? video.user.avatar as String;
+                    final username = userData?.username ?? video.username;
+                    
+                    return ListTile(
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AspectRatio(
-                            aspectRatio: 16 / 9,
-                            child: Image.network(
-                              video.videos[0].thumbnail.url as String,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Positioned(
-                            right: 8,
-                            bottom: 8,
-                            child: Container(
-                              color: Colors.black54,
-                              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                              child: Text(
-                                '${_formatDuration(video.videos[0].duration)}',
-                                style: TextStyle(color: Colors.white, fontSize: 12),
+                          SizedBox(height: 8),
+                          Stack(
+                            children: [
+                              AspectRatio(
+                                aspectRatio: 16 / 9,
+                                child: Image.network(
+                                  video.videos[0].thumbnail.url as String,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
+                              Positioned(
+                                right: 8,
+                                bottom: 8,
+                                child: Container(
+                                  color: Colors.black54,
+                                  padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                                  child: Text(
+                                    '${_formatDuration(video.videos[0].duration)}',
+                                    style: TextStyle(color: Colors.white, fontSize: 12),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 8),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage: NetworkImage(avatarUrl),
+                                      radius: 20,
+                                      // Add error handling for avatar image
+                                      onBackgroundImageError: (exception, stackTrace) {
+                                        print('Error loading avatar: $exception');
+                                      },
+                                    ),
+                                    const SizedBox(height: 4),
+                                  ],
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        video.title,
+                                        style: const TextStyle(fontWeight: FontWeight.bold),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      Text(
+                                        'Views: ${video.postEngagement.views}',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+
+                                      // username
+                                      Text(
+                                        username,
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      // Only show followers if we have valid user data
+                                    
+                                      if (userData?.followers != null)
+                                        Text(
+                                          'Followers: ${userData!.followers}',
+                                          style: TextStyle(fontSize: 12),
+                                        ),
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                         ],
                       ),
-                      Container(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              children: [
-                                Image.network(video.user.avatar as String),
-                              ],
-                            ),
-                            const SizedBox(width: 8),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    video.title,
-                                    style: const TextStyle(fontWeight: FontWeight.bold),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  Text('Author: ${video.username}'),
-                                  Text('Views: ${video.postEngagement.views}'),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      // Image.network(video.user.avatar as String),
-                      // Text('${video.title}', style: TextStyle(fontWeight: FontWeight.bold)),
-                      // Text('Author: ${video.username}'),
-                      // Text('Views: ${video.postEngagement.views}'),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BasicPlayback(video: video),
-                      ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BasicPlayback(video: video),
+                          ),
+                        );
+                      },
                     );
                   },
                 );

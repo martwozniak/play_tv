@@ -136,28 +136,29 @@ class NetworkMapper {
 
   user.User toUser(u.User userEntity) {
     try {
-    return user.User(
-      ulid: userEntity.ulid,
-      name: userEntity.name,
-      username: userEntity.username,
-      avatar: userEntity.avatar,
-      bio: userEntity.bio,
-      website: userEntity.website,
-      websiteName: userEntity.websiteName,
-      background: userEntity.background,
-      badges: userEntity.badges,
-      followers: userEntity.followers,
-      following: userEntity.following,
-      friendCount: userEntity.friendCount,
-      postCount: userEntity.postCount,
-      videoCount: userEntity.videoCount,
-      burstCount: userEntity.burstCount,
-      emailVerified: userEntity.emailVerified,
-      updatedAt: userEntity.updatedAt,
-      updatedAtEpoch: userEntity.updatedAtEpoch,
-      profileEngagement: userEntity.profileEngagement,
-    );
+      return user.User(
+        ulid: userEntity.ulid,
+        name: userEntity.name,
+        username: userEntity.username,
+        avatar: userEntity.avatar,
+        bio: userEntity.bio,
+        website: userEntity.website,
+        websiteName: userEntity.websiteName,
+        background: userEntity.background,
+        badges: userEntity.badges,
+        followers: userEntity.followers,
+        following: userEntity.following,
+        friendCount: userEntity.friendCount,
+        postCount: userEntity.postCount,
+        videoCount: userEntity.videoCount,
+        burstCount: userEntity.burstCount,
+        emailVerified: userEntity.emailVerified,
+        updatedAt: userEntity.updatedAt,
+        updatedAtEpoch: userEntity.updatedAtEpoch,
+        profileEngagement: userEntity.profileEngagement,
+      );
     } catch (e) {
+      logger.e('Failed to map UserEntity to User', error: e);
       throw MapperException<u.User, user.User>('Failed to map UserEntity to User: $e');
     }
   }

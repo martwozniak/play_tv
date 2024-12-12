@@ -62,10 +62,21 @@ class ApiClient {
     
     if (response.statusCode != null && response.statusCode! >= 400) {
       throw Exception('Failed to get user profile');
-    } else if (response.statusCode == 200 && response.data is Map<String, dynamic>) {
-      return u.UserEntity.fromJson(response.data as Map<String, dynamic>);
-    } else {
-      throw Exception('Failed to get user profile');
+    } 
+    
+    try {
+      if (response.statusCode == 200 && response.data is List) {
+        final userDataList = response.data as List;
+        if (userDataList.isNotEmpty && userDataList[0] is Map<String, dynamic>) {
+          final userData = userDataList[0] as Map<String, dynamic>;
+          if (userData.containsKey('data')) {
+            return u.UserEntity.fromJson(userData);
+          }
+        }
+      }
+      throw Exception('Invalid response structure');
+    } catch (e) {
+      throw Exception('Failed to parse user profile: $e');
     }
   }
 }

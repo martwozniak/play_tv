@@ -20,11 +20,11 @@ mixin _$User {
   String get name => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
-  String get bio => throw _privateConstructorUsedError;
-  String get website => throw _privateConstructorUsedError;
-  String get websiteName => throw _privateConstructorUsedError;
-  String get background => throw _privateConstructorUsedError;
-  List<dynamic> get badges => throw _privateConstructorUsedError;
+  String? get bio => throw _privateConstructorUsedError;
+  String? get website => throw _privateConstructorUsedError;
+  String? get websiteName => throw _privateConstructorUsedError;
+  String? get background => throw _privateConstructorUsedError;
+  List<dynamic>? get badges => throw _privateConstructorUsedError;
   int get followers => throw _privateConstructorUsedError;
   int get following => throw _privateConstructorUsedError;
   int get friendCount => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ mixin _$User {
   DateTime get emailVerified => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
   int get updatedAtEpoch => throw _privateConstructorUsedError;
-  List<dynamic> get profileEngagement => throw _privateConstructorUsedError;
+  List<dynamic>? get profileEngagement => throw _privateConstructorUsedError;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -52,11 +52,11 @@ abstract class $UserCopyWith<$Res> {
       String name,
       String username,
       String avatar,
-      String bio,
-      String website,
-      String websiteName,
-      String background,
-      List<dynamic> badges,
+      String? bio,
+      String? website,
+      String? websiteName,
+      String? background,
+      List<dynamic>? badges,
       int followers,
       int following,
       int friendCount,
@@ -66,7 +66,7 @@ abstract class $UserCopyWith<$Res> {
       DateTime emailVerified,
       DateTime updatedAt,
       int updatedAtEpoch,
-      List<dynamic> profileEngagement});
+      List<dynamic>? profileEngagement});
 }
 
 /// @nodoc
@@ -88,11 +88,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? name = null,
     Object? username = null,
     Object? avatar = null,
-    Object? bio = null,
-    Object? website = null,
-    Object? websiteName = null,
-    Object? background = null,
-    Object? badges = null,
+    Object? bio = freezed,
+    Object? website = freezed,
+    Object? websiteName = freezed,
+    Object? background = freezed,
+    Object? badges = freezed,
     Object? followers = null,
     Object? following = null,
     Object? friendCount = null,
@@ -102,7 +102,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? emailVerified = null,
     Object? updatedAt = null,
     Object? updatedAtEpoch = null,
-    Object? profileEngagement = null,
+    Object? profileEngagement = freezed,
   }) {
     return _then(_value.copyWith(
       ulid: null == ulid
@@ -121,26 +121,26 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      bio: null == bio
+      bio: freezed == bio
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
-              as String,
-      website: null == website
+              as String?,
+      website: freezed == website
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
-              as String,
-      websiteName: null == websiteName
+              as String?,
+      websiteName: freezed == websiteName
           ? _value.websiteName
           : websiteName // ignore: cast_nullable_to_non_nullable
-              as String,
-      background: null == background
+              as String?,
+      background: freezed == background
           ? _value.background
           : background // ignore: cast_nullable_to_non_nullable
-              as String,
-      badges: null == badges
+              as String?,
+      badges: freezed == badges
           ? _value.badges
           : badges // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
       followers: null == followers
           ? _value.followers
           : followers // ignore: cast_nullable_to_non_nullable
@@ -177,10 +177,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.updatedAtEpoch
           : updatedAtEpoch // ignore: cast_nullable_to_non_nullable
               as int,
-      profileEngagement: null == profileEngagement
+      profileEngagement: freezed == profileEngagement
           ? _value.profileEngagement
           : profileEngagement // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
     ) as $Val);
   }
 }
@@ -197,11 +197,11 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String name,
       String username,
       String avatar,
-      String bio,
-      String website,
-      String websiteName,
-      String background,
-      List<dynamic> badges,
+      String? bio,
+      String? website,
+      String? websiteName,
+      String? background,
+      List<dynamic>? badges,
       int followers,
       int following,
       int friendCount,
@@ -211,7 +211,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       DateTime emailVerified,
       DateTime updatedAt,
       int updatedAtEpoch,
-      List<dynamic> profileEngagement});
+      List<dynamic>? profileEngagement});
 }
 
 /// @nodoc
@@ -230,11 +230,11 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? name = null,
     Object? username = null,
     Object? avatar = null,
-    Object? bio = null,
-    Object? website = null,
-    Object? websiteName = null,
-    Object? background = null,
-    Object? badges = null,
+    Object? bio = freezed,
+    Object? website = freezed,
+    Object? websiteName = freezed,
+    Object? background = freezed,
+    Object? badges = freezed,
     Object? followers = null,
     Object? following = null,
     Object? friendCount = null,
@@ -244,7 +244,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? emailVerified = null,
     Object? updatedAt = null,
     Object? updatedAtEpoch = null,
-    Object? profileEngagement = null,
+    Object? profileEngagement = freezed,
   }) {
     return _then(_$UserImpl(
       ulid: null == ulid
@@ -263,26 +263,26 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      bio: null == bio
+      bio: freezed == bio
           ? _value.bio
           : bio // ignore: cast_nullable_to_non_nullable
-              as String,
-      website: null == website
+              as String?,
+      website: freezed == website
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
-              as String,
-      websiteName: null == websiteName
+              as String?,
+      websiteName: freezed == websiteName
           ? _value.websiteName
           : websiteName // ignore: cast_nullable_to_non_nullable
-              as String,
-      background: null == background
+              as String?,
+      background: freezed == background
           ? _value.background
           : background // ignore: cast_nullable_to_non_nullable
-              as String,
-      badges: null == badges
+              as String?,
+      badges: freezed == badges
           ? _value._badges
           : badges // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
       followers: null == followers
           ? _value.followers
           : followers // ignore: cast_nullable_to_non_nullable
@@ -319,10 +319,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.updatedAtEpoch
           : updatedAtEpoch // ignore: cast_nullable_to_non_nullable
               as int,
-      profileEngagement: null == profileEngagement
+      profileEngagement: freezed == profileEngagement
           ? _value._profileEngagement
           : profileEngagement // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
     ));
   }
 }
@@ -339,7 +339,7 @@ class _$UserImpl implements _User {
       required this.website,
       required this.websiteName,
       required this.background,
-      required final List<dynamic> badges,
+      required final List<dynamic>? badges,
       required this.followers,
       required this.following,
       required this.friendCount,
@@ -349,7 +349,7 @@ class _$UserImpl implements _User {
       required this.emailVerified,
       required this.updatedAt,
       required this.updatedAtEpoch,
-      required final List<dynamic> profileEngagement})
+      required final List<dynamic>? profileEngagement})
       : _badges = badges,
         _profileEngagement = profileEngagement;
 
@@ -362,19 +362,21 @@ class _$UserImpl implements _User {
   @override
   final String avatar;
   @override
-  final String bio;
+  final String? bio;
   @override
-  final String website;
+  final String? website;
   @override
-  final String websiteName;
+  final String? websiteName;
   @override
-  final String background;
-  final List<dynamic> _badges;
+  final String? background;
+  final List<dynamic>? _badges;
   @override
-  List<dynamic> get badges {
+  List<dynamic>? get badges {
+    final value = _badges;
+    if (value == null) return null;
     if (_badges is EqualUnmodifiableListView) return _badges;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_badges);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -395,13 +397,15 @@ class _$UserImpl implements _User {
   final DateTime updatedAt;
   @override
   final int updatedAtEpoch;
-  final List<dynamic> _profileEngagement;
+  final List<dynamic>? _profileEngagement;
   @override
-  List<dynamic> get profileEngagement {
+  List<dynamic>? get profileEngagement {
+    final value = _profileEngagement;
+    if (value == null) return null;
     if (_profileEngagement is EqualUnmodifiableListView)
       return _profileEngagement;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_profileEngagement);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -487,11 +491,11 @@ abstract class _User implements User {
       required final String name,
       required final String username,
       required final String avatar,
-      required final String bio,
-      required final String website,
-      required final String websiteName,
-      required final String background,
-      required final List<dynamic> badges,
+      required final String? bio,
+      required final String? website,
+      required final String? websiteName,
+      required final String? background,
+      required final List<dynamic>? badges,
       required final int followers,
       required final int following,
       required final int friendCount,
@@ -501,7 +505,7 @@ abstract class _User implements User {
       required final DateTime emailVerified,
       required final DateTime updatedAt,
       required final int updatedAtEpoch,
-      required final List<dynamic> profileEngagement}) = _$UserImpl;
+      required final List<dynamic>? profileEngagement}) = _$UserImpl;
 
   @override
   String get ulid;
@@ -512,15 +516,15 @@ abstract class _User implements User {
   @override
   String get avatar;
   @override
-  String get bio;
+  String? get bio;
   @override
-  String get website;
+  String? get website;
   @override
-  String get websiteName;
+  String? get websiteName;
   @override
-  String get background;
+  String? get background;
   @override
-  List<dynamic> get badges;
+  List<dynamic>? get badges;
   @override
   int get followers;
   @override
@@ -540,7 +544,7 @@ abstract class _User implements User {
   @override
   int get updatedAtEpoch;
   @override
-  List<dynamic> get profileEngagement;
+  List<dynamic>? get profileEngagement;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

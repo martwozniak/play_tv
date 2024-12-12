@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:play_tv/data/network/client/api_client.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/network_mapper.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
-import 'package:play_tv/features/trending/TrendingVideos/presentation/details/movie_detail_screen.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
 import 'package:provider/provider.dart';
 import 'package:logger/logger.dart';
 

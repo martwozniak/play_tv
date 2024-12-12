@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/repository/trending_videos_repository.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart' as video;
 import 'package:play_tv/features/trending/TrendingVideos/presentation/details/basic_playback.dart';
-import 'package:play_tv/features/trending/TrendingVideos/presentation/details/movie_detail_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
 import 'package:play_tv/core/utils/date_time_formatter.dart';

@@ -6,7 +6,9 @@ part of 'trending_videos_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TrendingVideosEntity _$TrendingVideosEntityFromJson(Map<String, dynamic> json) => TrendingVideosEntity(
+TrendingVideosEntity _$TrendingVideosEntityFromJson(
+        Map<String, dynamic> json) =>
+    TrendingVideosEntity(
       path: json['path'] as String,
       perPage: (json['perPage'] as num).toInt(),
       nextCursor: json['nextCursor'] as String,
@@ -16,7 +18,9 @@ TrendingVideosEntity _$TrendingVideosEntityFromJson(Map<String, dynamic> json) =
       ulids: (json['ulids'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$TrendingVideosEntityToJson(TrendingVideosEntity instance) => <String, dynamic>{
+Map<String, dynamic> _$TrendingVideosEntityToJson(
+        TrendingVideosEntity instance) =>
+    <String, dynamic>{
       'path': instance.path,
       'perPage': instance.perPage,
       'nextCursor': instance.nextCursor,

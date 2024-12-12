@@ -44,7 +44,8 @@ mixin _$User {
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
       {String ulid,
@@ -69,7 +70,8 @@ abstract class $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res> {
+class _$UserCopyWithImpl<$Res, $Val extends User>
+    implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -185,7 +187,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(_$UserImpl value, $Res Function(_$UserImpl) then) = __$$UserImplCopyWithImpl<$Res>;
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -211,8 +215,11 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$UserImpl> implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then) : super(_value, _then);
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -395,7 +402,8 @@ class _$UserImpl implements _User {
   List<dynamic>? get profileEngagement {
     final value = _profileEngagement;
     if (value == null) return null;
-    if (_profileEngagement is EqualUnmodifiableListView) return _profileEngagement;
+    if (_profileEngagement is EqualUnmodifiableListView)
+      return _profileEngagement;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -412,23 +420,36 @@ class _$UserImpl implements _User {
             other is _$UserImpl &&
             (identical(other.ulid, ulid) || other.ulid == ulid) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.username, username) || other.username == username) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.bio, bio) || other.bio == bio) &&
             (identical(other.website, website) || other.website == website) &&
-            (identical(other.websiteName, websiteName) || other.websiteName == websiteName) &&
-            (identical(other.background, background) || other.background == background) &&
+            (identical(other.websiteName, websiteName) ||
+                other.websiteName == websiteName) &&
+            (identical(other.background, background) ||
+                other.background == background) &&
             const DeepCollectionEquality().equals(other._badges, _badges) &&
-            (identical(other.followers, followers) || other.followers == followers) &&
-            (identical(other.following, following) || other.following == following) &&
-            (identical(other.friendCount, friendCount) || other.friendCount == friendCount) &&
-            (identical(other.postCount, postCount) || other.postCount == postCount) &&
-            (identical(other.videoCount, videoCount) || other.videoCount == videoCount) &&
-            (identical(other.burstCount, burstCount) || other.burstCount == burstCount) &&
-            (identical(other.emailVerified, emailVerified) || other.emailVerified == emailVerified) &&
-            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
-            (identical(other.updatedAtEpoch, updatedAtEpoch) || other.updatedAtEpoch == updatedAtEpoch) &&
-            const DeepCollectionEquality().equals(other._profileEngagement, _profileEngagement));
+            (identical(other.followers, followers) ||
+                other.followers == followers) &&
+            (identical(other.following, following) ||
+                other.following == following) &&
+            (identical(other.friendCount, friendCount) ||
+                other.friendCount == friendCount) &&
+            (identical(other.postCount, postCount) ||
+                other.postCount == postCount) &&
+            (identical(other.videoCount, videoCount) ||
+                other.videoCount == videoCount) &&
+            (identical(other.burstCount, burstCount) ||
+                other.burstCount == burstCount) &&
+            (identical(other.emailVerified, emailVerified) ||
+                other.emailVerified == emailVerified) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.updatedAtEpoch, updatedAtEpoch) ||
+                other.updatedAtEpoch == updatedAtEpoch) &&
+            const DeepCollectionEquality()
+                .equals(other._profileEngagement, _profileEngagement));
   }
 
   @override
@@ -460,7 +481,8 @@ class _$UserImpl implements _User {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith => __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 }
 
 abstract class _User implements User {
@@ -528,5 +550,6 @@ abstract class _User implements User {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

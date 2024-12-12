@@ -1,11 +1,14 @@
 import 'package:logger/logger.dart';
 import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/trending_videos_entity.dart';
-import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/video_entity.dart' as entity;
-import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/user_entity.dart' as u;
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/video_entity.dart'
+    as entity;
+import 'package:play_tv/features/trending/TrendingVideos/data/network/entity/user_entity.dart'
+    as u;
 import 'package:play_tv/features/trending/TrendingVideos/domain/exception/mapper_exception.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/trending_videos.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart'
+    as user;
 
 class NetworkMapper {
   final Logger logger;
@@ -26,11 +29,13 @@ class NetworkMapper {
         ulids: trendingVideosEntity.ulids,
       );
     } catch (e) {
-      throw MapperException<TrendingVideosEntity, TrendingVideos>('Failed to map trending videos');
+      throw MapperException<TrendingVideosEntity, TrendingVideos>(
+          'Failed to map trending videos');
     }
   }
 
-  List<TrendingVideos> toTrendingVideosList(List<TrendingVideosEntity> entities) {
+  List<TrendingVideos> toTrendingVideosList(
+      List<TrendingVideosEntity> entities) {
     final trendingVideosList = <TrendingVideos>[];
 
     for (final entity in entities) {
@@ -84,7 +89,9 @@ class NetworkMapper {
                 ))
             .toList(),
         videoProcessing: singleVideoEntity.videoProcessing,
-        tags: singleVideoEntity.tags.map((tag) => Tag(name: tag.name ?? '')).toList(),
+        tags: singleVideoEntity.tags
+            .map((tag) => Tag(name: tag.name ?? ''))
+            .toList(),
         edited: singleVideoEntity.edited,
         userReaction: singleVideoEntity.userReaction,
         isRepost: singleVideoEntity.isRepost,
@@ -95,12 +102,14 @@ class NetworkMapper {
           commentCount: singleVideoEntity.postEngagement.commentCount,
           views: singleVideoEntity.postEngagement.views,
           reactions: singleVideoEntity.postEngagement.reactions
-              .map((reaction) => Reaction(name: reaction.name ?? '', count: reaction.count))
+              .map((reaction) =>
+                  Reaction(name: reaction.name ?? '', count: reaction.count))
               .toList(),
         ),
         userEngagement: UserEngagement(
           hasReposted: singleVideoEntity.userEngagement.hasReposted,
-          hasRepostedWithComment: singleVideoEntity.userEngagement.hasRepostedWithComment,
+          hasRepostedWithComment:
+              singleVideoEntity.userEngagement.hasRepostedWithComment,
           hasCommented: singleVideoEntity.userEngagement.hasCommented,
         ),
         createdAt: singleVideoEntity.createdAt,
@@ -113,7 +122,8 @@ class NetworkMapper {
         isProcessing: singleVideoEntity.isProcessing,
       );
     } catch (e) {
-      throw MapperException<entity.VideoEntity, Video>('Failed to map VideoEntity to Video: $e');
+      throw MapperException<entity.VideoEntity, Video>(
+          'Failed to map VideoEntity to Video: $e');
     }
   }
 
@@ -160,7 +170,8 @@ class NetworkMapper {
       );
     } catch (e) {
       logger.e('Failed to map UserEntity to User', error: e);
-      throw MapperException<u.User, user.User>('Failed to map UserEntity to User: $e');
+      throw MapperException<u.User, user.User>(
+          'Failed to map UserEntity to User: $e');
     }
   }
 

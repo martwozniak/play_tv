@@ -27,12 +27,14 @@ mixin _$TrendingVideos {
   /// Create a copy of TrendingVideos
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TrendingVideosCopyWith<TrendingVideos> get copyWith => throw _privateConstructorUsedError;
+  $TrendingVideosCopyWith<TrendingVideos> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TrendingVideosCopyWith<$Res> {
-  factory $TrendingVideosCopyWith(TrendingVideos value, $Res Function(TrendingVideos) then) =
+  factory $TrendingVideosCopyWith(
+          TrendingVideos value, $Res Function(TrendingVideos) then) =
       _$TrendingVideosCopyWithImpl<$Res, TrendingVideos>;
   @useResult
   $Res call(
@@ -46,7 +48,8 @@ abstract class $TrendingVideosCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TrendingVideosCopyWithImpl<$Res, $Val extends TrendingVideos> implements $TrendingVideosCopyWith<$Res> {
+class _$TrendingVideosCopyWithImpl<$Res, $Val extends TrendingVideos>
+    implements $TrendingVideosCopyWith<$Res> {
   _$TrendingVideosCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -101,8 +104,10 @@ class _$TrendingVideosCopyWithImpl<$Res, $Val extends TrendingVideos> implements
 }
 
 /// @nodoc
-abstract class _$$TrendingVideosImplCopyWith<$Res> implements $TrendingVideosCopyWith<$Res> {
-  factory _$$TrendingVideosImplCopyWith(_$TrendingVideosImpl value, $Res Function(_$TrendingVideosImpl) then) =
+abstract class _$$TrendingVideosImplCopyWith<$Res>
+    implements $TrendingVideosCopyWith<$Res> {
+  factory _$$TrendingVideosImplCopyWith(_$TrendingVideosImpl value,
+          $Res Function(_$TrendingVideosImpl) then) =
       __$$TrendingVideosImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -117,9 +122,11 @@ abstract class _$$TrendingVideosImplCopyWith<$Res> implements $TrendingVideosCop
 }
 
 /// @nodoc
-class __$$TrendingVideosImplCopyWithImpl<$Res> extends _$TrendingVideosCopyWithImpl<$Res, _$TrendingVideosImpl>
+class __$$TrendingVideosImplCopyWithImpl<$Res>
+    extends _$TrendingVideosCopyWithImpl<$Res, _$TrendingVideosImpl>
     implements _$$TrendingVideosImplCopyWith<$Res> {
-  __$$TrendingVideosImplCopyWithImpl(_$TrendingVideosImpl _value, $Res Function(_$TrendingVideosImpl) _then)
+  __$$TrendingVideosImplCopyWithImpl(
+      _$TrendingVideosImpl _value, $Res Function(_$TrendingVideosImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of TrendingVideos
@@ -213,10 +220,14 @@ class _$TrendingVideosImpl implements _TrendingVideos {
             other is _$TrendingVideosImpl &&
             (identical(other.path, path) || other.path == path) &&
             (identical(other.perPage, perPage) || other.perPage == perPage) &&
-            (identical(other.nextCursor, nextCursor) || other.nextCursor == nextCursor) &&
-            (identical(other.nextPageUrl, nextPageUrl) || other.nextPageUrl == nextPageUrl) &&
-            const DeepCollectionEquality().equals(other.prevCursor, prevCursor) &&
-            const DeepCollectionEquality().equals(other.prevPageUrl, prevPageUrl) &&
+            (identical(other.nextCursor, nextCursor) ||
+                other.nextCursor == nextCursor) &&
+            (identical(other.nextPageUrl, nextPageUrl) ||
+                other.nextPageUrl == nextPageUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.prevCursor, prevCursor) &&
+            const DeepCollectionEquality()
+                .equals(other.prevPageUrl, prevPageUrl) &&
             const DeepCollectionEquality().equals(other._ulids, _ulids));
   }
 
@@ -237,7 +248,8 @@ class _$TrendingVideosImpl implements _TrendingVideos {
   @override
   @pragma('vm:prefer-inline')
   _$$TrendingVideosImplCopyWith<_$TrendingVideosImpl> get copyWith =>
-      __$$TrendingVideosImplCopyWithImpl<_$TrendingVideosImpl>(this, _$identity);
+      __$$TrendingVideosImplCopyWithImpl<_$TrendingVideosImpl>(
+          this, _$identity);
 }
 
 abstract class _TrendingVideos implements TrendingVideos {
@@ -269,5 +281,6 @@ abstract class _TrendingVideos implements TrendingVideos {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TrendingVideosImplCopyWith<_$TrendingVideosImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TrendingVideosImplCopyWith<_$TrendingVideosImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

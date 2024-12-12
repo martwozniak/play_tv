@@ -1,6 +1,7 @@
 import 'package:bitmovin_player/bitmovin_player.dart';
 import 'package:flutter/material.dart';
 import 'package:play_tv/core/utils/date_time_formatter.dart';
+import 'package:play_tv/core/utils/source_type_from_url.dart';
 import 'package:play_tv/env/env.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as u;
@@ -44,7 +45,7 @@ class _BasicPlaybackState extends State<BasicPlayback> {
     video = widget.video;
     user = widget.user;
     // _player.loadSourceConfig(_sourceConfig);
-    _player.loadSourceConfig(SourceConfig(url: video.videos[0].url as String, type: SourceType.progressive));
+    _player.loadSourceConfig(SourceConfig(url: video.videos[0].url as String, type: getSourceTypeFromUrl(video.videos[0].url as String)));
   }
 
   @override

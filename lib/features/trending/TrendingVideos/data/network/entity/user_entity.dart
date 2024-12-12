@@ -12,7 +12,9 @@ class UserEntity {
 
   factory UserEntity.fromJson(Map<String, dynamic> json) {
     return UserEntity(
-      data: (json['data'] as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList(),
+      data: (json['data'] as List<dynamic>)
+          .map((e) => User.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 
@@ -83,7 +85,8 @@ class User {
   factory User.fromJson(Map<String, dynamic> json) {
     return _$UserFromJson({
       ...json,
-      'emailVerified': json['emailVerified'] ?? DateTime.now().toIso8601String(),
+      'emailVerified':
+          json['emailVerified'] ?? DateTime.now().toIso8601String(),
       'updatedAt': json['updatedAt'] ?? DateTime.now().toIso8601String(),
     });
   }

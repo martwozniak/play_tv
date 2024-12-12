@@ -10,7 +10,8 @@ class VideoEntity {
     required this.data,
   });
 
-  factory VideoEntity.fromJson(Map<String, dynamic> json) => _$VideoEntityFromJson(json);
+  factory VideoEntity.fromJson(Map<String, dynamic> json) =>
+      _$VideoEntityFromJson(json);
   Map<String, dynamic> toJson() => _$VideoEntityToJson(this);
 }
 
@@ -86,7 +87,8 @@ class SingleVideoEntity {
     required this.postEngagement,
   });
 
-  factory SingleVideoEntity.fromJson(Map<String, dynamic> json) => _$SingleVideoEntityFromJson(json);
+  factory SingleVideoEntity.fromJson(Map<String, dynamic> json) =>
+      _$SingleVideoEntityFromJson(json);
   Map<String, dynamic> toJson() => _$SingleVideoEntityToJson(this);
 }
 
@@ -104,7 +106,8 @@ class PostEngagement {
     required this.reactions,
   });
 
-  factory PostEngagement.fromJson(Map<String, dynamic> json) => _$PostEngagementFromJson(json);
+  factory PostEngagement.fromJson(Map<String, dynamic> json) =>
+      _$PostEngagementFromJson(json);
   Map<String, dynamic> toJson() => _$PostEngagementToJson(this);
 }
 
@@ -118,7 +121,8 @@ class Reaction {
     required this.count,
   });
 
-  factory Reaction.fromJson(Map<String, dynamic> json) => _$ReactionFromJson(json);
+  factory Reaction.fromJson(Map<String, dynamic> json) =>
+      _$ReactionFromJson(json);
   Map<String, dynamic> toJson() => _$ReactionToJson(this);
 }
 
@@ -164,7 +168,8 @@ class UserEngagement {
     required this.hasCommented,
   });
 
-  factory UserEngagement.fromJson(Map<String, dynamic> json) => _$UserEngagementFromJson(json);
+  factory UserEngagement.fromJson(Map<String, dynamic> json) =>
+      _$UserEngagementFromJson(json);
   Map<String, dynamic> toJson() => _$UserEngagementToJson(this);
 }
 
@@ -188,7 +193,8 @@ class VideoProcessingClass {
     required this.updatedAt,
   });
 
-  factory VideoProcessingClass.fromJson(Map<String, dynamic> json) => _$VideoProcessingClassFromJson(json);
+  factory VideoProcessingClass.fromJson(Map<String, dynamic> json) =>
+      _$VideoProcessingClassFromJson(json);
   Map<String, dynamic> toJson() => _$VideoProcessingClassToJson(this);
 }
 
@@ -208,7 +214,8 @@ class VideoClass {
     this.duration,
   });
 
-  factory VideoClass.fromJson(Map<String, dynamic> json) => _$VideoClassFromJson(json);
+  factory VideoClass.fromJson(Map<String, dynamic> json) =>
+      _$VideoClassFromJson(json);
   Map<String, dynamic> toJson() => _$VideoClassToJson(this);
 }
 
@@ -232,7 +239,8 @@ class SingleVideo {
     required this.thumbnail,
   });
 
-  factory SingleVideo.fromJson(Map<String, dynamic> json) => _$SingleVideoFromJson(json);
+  factory SingleVideo.fromJson(Map<String, dynamic> json) =>
+      _$SingleVideoFromJson(json);
   Map<String, dynamic> toJson() => _$SingleVideoToJson(this);
 }
 
@@ -256,6 +264,7 @@ class VideoThumbnail {
     required this.mimeType,
   });
 
-  factory VideoThumbnail.fromJson(Map<String, dynamic> json) => _$VideoThumbnailFromJson(json);
+  factory VideoThumbnail.fromJson(Map<String, dynamic> json) =>
+      _$VideoThumbnailFromJson(json);
   Map<String, dynamic> toJson() => _$VideoThumbnailToJson(this);
 }

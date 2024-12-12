@@ -15,7 +15,8 @@ TrendingVideosEntity TrendingVideosEntityFromJson(String str) {
   }
 }
 
-String TrendingVideosEntityToJson(TrendingVideosEntity data) => json.encode(data.toJson());
+String TrendingVideosEntityToJson(TrendingVideosEntity data) =>
+    json.encode(data.toJson());
 
 @JsonSerializable()
 class TrendingVideosEntity {
@@ -37,7 +38,8 @@ class TrendingVideosEntity {
     required this.ulids,
   });
 
-  factory TrendingVideosEntity.fromJson(Map<String, dynamic> json) => TrendingVideosEntity(
+  factory TrendingVideosEntity.fromJson(Map<String, dynamic> json) =>
+      TrendingVideosEntity(
         path: json["path"] as String,
         perPage: json["per_page"] as int,
         nextCursor: json["next_cursor"] as String,

@@ -4,7 +4,8 @@ import 'package:play_tv/core/utils/date_time_formatter.dart';
 import 'package:play_tv/core/utils/source_type_from_url.dart';
 import 'package:play_tv/env/env.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/video.dart';
-import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as u;
+import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart'
+    as u;
 import 'package:play_tv/features/trending/TrendingVideos/presentation/player/platform.dart';
 import 'package:play_tv/features/trending/TrendingVideos/presentation/player/player_view_container.dart';
 
@@ -45,8 +46,9 @@ class _BasicPlaybackState extends State<BasicPlayback> {
     video = widget.video;
     user = widget.user;
     // _player.loadSourceConfig(_sourceConfig);
-    _player.loadSourceConfig(
-        SourceConfig(url: video.videos[0].url as String, type: getSourceTypeFromUrl(video.videos[0].url as String)));
+    _player.loadSourceConfig(SourceConfig(
+        url: video.videos[0].url as String,
+        type: getSourceTypeFromUrl(video.videos[0].url as String)));
   }
 
   @override
@@ -109,9 +111,11 @@ class _BasicPlaybackState extends State<BasicPlayback> {
                   margin: EdgeInsets.only(bottom: 4, top: 4),
                   child: Row(
                     children: [
-                      Text(DateTimeFormatter.getRelativeTime(video.createdAt), style: TextStyle(fontSize: 12)),
+                      Text(DateTimeFormatter.getRelativeTime(video.createdAt),
+                          style: TextStyle(fontSize: 12)),
                       Text(' • '),
-                      Text('${video.postEngagement.views} Views', style: TextStyle(fontSize: 12)),
+                      Text('${video.postEngagement.views} Views',
+                          style: TextStyle(fontSize: 12)),
                     ],
                   ),
                 ),

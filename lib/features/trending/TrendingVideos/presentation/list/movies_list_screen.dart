@@ -7,6 +7,7 @@ import 'package:play_tv/features/trending/TrendingVideos/presentation/details/ba
 import 'package:play_tv/features/trending/TrendingVideos/presentation/details/movie_detail_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:play_tv/features/trending/TrendingVideos/domain/model/user.dart' as user;
+import 'package:play_tv/core/utils/date_time_formatter.dart';
 
 class MoviesList extends StatefulWidget {
   const MoviesList({super.key});
@@ -67,7 +68,7 @@ class _MoviesListState extends State<MoviesList> {
                   builder: (context, userSnapshot) {
                     final userData = userSnapshot.hasData ? userSnapshot.data : null;
                     final avatarUrl = userData?.avatar ?? video.user.avatar as String;
-                    final username = userData?.username ?? video.username;
+                    final username = userData?.name ?? video.username;
                     
                     return ListTile(
                       subtitle: Column(
@@ -127,23 +128,23 @@ class _MoviesListState extends State<MoviesList> {
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                       ),
-                                      Text(
-                                        'Views: ${video.postEngagement.views}',
-                                        style: TextStyle(fontSize: 12),
-                                      ),
-
+                          
                                       // username
                                       Text(
-                                        username,
+                                        username.toString(),
                                         style: TextStyle(fontSize: 12),
                                       ),
                                       // Only show followers if we have valid user data
-                                    
-                                      if (userData?.followers != null)
+                                    Row(
+                                      children: [
                                         Text(
-                                          'Followers: ${userData!.followers}',
-                                          style: TextStyle(fontSize: 12),
+                                          DateTimeFormatter.getRelativeTime(video.createdAt),
+                                          style: TextStyle(fontSize: 12)
                                         ),
+                                        Text(' • '),
+                                        Text('${video.postEngagement.views} views', style: TextStyle(fontSize: 12)),
+                                      ],
+                                    ),
                                     ],
                                   ),
                                 )
@@ -156,7 +157,7 @@ class _MoviesListState extends State<MoviesList> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BasicPlayback(video: video),
+                            builder: (context) => BasicPlayback(video: video, user: userData),
                           ),
                         );
                       },
